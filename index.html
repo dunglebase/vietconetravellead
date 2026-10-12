@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vietcone Leads</title>
+<meta name="description" content="Vietcone Travel — ghi nhận và chuyển giao khách tại hội chợ, workshop">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Vietcone Leads">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rust:#B0412F; --rust-d:#8F3322; --rust-t:#F6E8E4;
+  --red:#E31E24; --gold:#E3BE00; --gold-d:#8C7000; --gold-t:#FBF4D6;
+  --grey-d:#5F5954; --grey-t:#EFECE8;
+  --cream:#FFFCF6; --paper:#FFFFFF; --ink:#2F2E2E; --muted:#6E6762;
+  --line:#ECE4D8; --line2:#D8CDBE; --ok:#2E7D4F; --ok-t:#E6F3EB;
+  --nav:62px; --r:14px;
+  --serif:'EB Garamond',Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.45 var(--sans);-webkit-tap-highlight-color:transparent}
+body.noscroll{overflow:hidden}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation;border:0;background:none;padding:0}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p,li,dd,small{text-wrap:pretty}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.top-in{max-width:600px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:8px 12px}
+.logo{height:32px;width:auto;display:block}
+.evchip{flex:1;min-width:0;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--cream);border:1px solid var(--line);font-size:13px;color:var(--muted);text-align:left}
+.evchip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.evchip b{color:var(--ink);font-weight:600}
+.lang{display:flex;border:1px solid var(--line2);border-radius:999px;overflow:hidden;flex:none}
+.lang button{font-size:12px;font-weight:600;letter-spacing:.04em;padding:6px 8px;color:var(--muted)}
+.lang button.on{background:var(--rust);color:#fff}
+.icon-btn{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;color:var(--ink);flex:none}
+.icon-btn:active{background:var(--grey-t)}
+
+/* layout */
+main{max-width:600px;margin:0 auto;padding:12px 12px calc(var(--nav) + 24px + env(safe-area-inset-bottom))}
+.ttl{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--rust);line-height:1.15;margin:4px 2px 2px}
+.sub{color:var(--muted);font-size:13px;margin:0 2px 10px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:0 0 10px}
+.card h2{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.card h2 .n{width:24px;height:24px;border-radius:50%;background:var(--rust);color:#fff;font:600 13px/24px var(--sans);text-align:center;flex:none}
+.req{color:var(--rust);font-style:normal;font-weight:700}
+.lbl{display:block;font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--muted);margin:10px 0 5px}
+.card h2 + .fld .lbl,.card h2 + .lbl{margin-top:0}
+.fld{min-width:0}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=month],input[type=search],textarea{
+  width:100%;font-size:16px;padding:11px 12px;border:1px solid var(--line2);border-radius:10px;background:#fff;outline:none;-webkit-appearance:none;appearance:none;min-height:46px}
+input[type=month]{min-height:46px;display:block}
+textarea{resize:vertical;min-height:84px;line-height:1.4}
+input:focus,textarea:focus{border-color:var(--rust);box-shadow:0 0 0 3px var(--rust-t)}
+input.bad{border-color:var(--rust);background:#FFF8F6}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hint,.rule{font-size:13px;color:var(--muted);margin:8px 2px 0}
+.rule{border-left:3px solid var(--gold);padding-left:8px}
+.err{font-size:13px;color:var(--rust);font-weight:600;margin:6px 2px 0}
+.err:empty{display:none}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{display:inline-flex;align-items:center;gap:5px;min-height:38px;padding:7px 13px;border-radius:999px;border:1px solid var(--line2);background:#fff;font-size:14px;line-height:1.2;text-align:left}
+.chip.on{background:var(--rust);border-color:var(--rust);color:#fff}
+.chip small{font-size:12px;opacity:.75}
+.chip.ghost{border-style:dashed;color:var(--rust);border-color:var(--rust)}
+.chips.sm .chip{min-height:32px;padding:5px 11px;font-size:13px}
+.addtag{display:flex;gap:8px;margin-top:8px}
+.addtag input{flex:1}
+
+/* priority */
+.prio{display:grid;gap:8px}
+.pr{display:flex;align-items:flex-start;gap:12px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line2);background:#fff;text-align:left}
+.pr b{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font:700 17px/1 var(--sans);flex:none}
+.pr span{display:flex;flex-direction:column;gap:1px}
+.pr strong{font-size:15px}
+.pr small{font-size:13px;color:var(--muted);line-height:1.35}
+.pr-A b{background:var(--rust-t);color:var(--rust)}
+.pr-B b{background:var(--gold-t);color:var(--gold-d)}
+.pr-C b{background:var(--grey-t);color:var(--grey-d)}
+.pr-A.on{border-color:var(--rust);background:var(--rust-t)}
+.pr-B.on{border-color:var(--gold);background:var(--gold-t)}
+.pr-C.on{border-color:var(--grey-d);background:var(--grey-t)}
+.pr-A.on b{background:var(--rust);color:#fff}
+.pr-B.on b{background:var(--gold);color:#3A2F00}
+.pr-C.on b{background:var(--grey-d);color:#fff}
+.suggest{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:var(--rust);font-weight:600;padding:6px 10px;border-radius:999px;background:var(--rust-t)}
+.suggest:empty{display:none}
+
+/* photos */
+.photos{display:flex;flex-wrap:wrap;gap:8px}
+.ph{position:relative;width:76px;height:76px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .rm{position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center}
+.ph .rm svg{width:14px;height:14px}
+.ph-add{width:76px;height:76px;border-radius:10px;border:1.5px dashed var(--rust);color:var(--rust);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:600;text-align:center;line-height:1.15;padding:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line2);background:#fff;color:var(--ink)}
+.btn.primary{background:var(--rust);border-color:var(--rust);color:#fff}
+.btn.primary:active{background:var(--rust-d)}
+.btn.danger{color:var(--rust);border-color:var(--rust)}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.btn-row{display:flex;gap:8px}
+.btn-row .btn{flex:1}
+.savebar{position:sticky;bottom:calc(var(--nav) + env(safe-area-inset-bottom) + 8px);display:flex;gap:8px;padding:8px 0 0;z-index:5}
+.savebar .btn{flex:1;box-shadow:0 6px 18px rgba(47,46,46,.14)}
+.savebar .btn:not(.primary){flex:0 0 auto}
+
+/* list */
+.search{position:relative}
+.search svg{position:absolute;left:12px;top:13px;color:var(--muted)}
+.search input{padding-left:40px}
+.stats{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:10px 2px}
+.lead{display:flex;width:100%;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px;margin:0 0 8px;text-align:left}
+.pb{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font:700 15px/1 var(--sans);flex:none}
+.pb-A{background:var(--rust);color:#fff}.pb-B{background:var(--gold);color:#3A2F00}.pb-C{background:var(--grey-d);color:#fff}
+.lb{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.l1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.l1 b{font-size:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.l1 time{font-size:12px;color:var(--muted);flex:none}
+.l2{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.l3{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:2px}
+.tg{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--cream);border:1px solid var(--line);color:var(--ink)}
+.tg.warn{background:#FFF1EE;border-color:#F0C9C0;color:var(--rust)}
+.tg.nx{background:var(--gold-t);border-color:#EEDC95;color:#5A4800}
+.thumb{width:52px;height:52px;border-radius:9px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.empty{text-align:center;color:var(--muted);padding:40px 16px}
+.empty svg{width:36px;height:36px;color:var(--line2);margin-bottom:6px}
+
+/* handoff */
+.facet{margin-top:12px}
+.facet:first-of-type{margin-top:4px}
+.match{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 10px;padding:12px;border-radius:12px;background:var(--cream);border:1px solid var(--line)}
+.match b{font-size:17px;color:var(--rust)}
+.match small{display:block;color:var(--muted);font-size:12px}
+.linkbtn{color:var(--rust);font-weight:600;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.preview{margin:0 0 12px;padding:0;list-style:none;font-size:13px;border-top:1px dashed var(--line2)}
+.preview li{padding:6px 2px;border-bottom:1px dashed var(--line2);display:flex;gap:8px;align-items:center}
+.preview .pb{width:22px;height:22px;font-size:12px;border-radius:6px}
+.stack{display:grid;gap:8px}
+.note-ok{font-size:13px;color:var(--ok);background:var(--ok-t);border-radius:10px;padding:10px 12px;margin-top:10px}
+.note-ok:empty{display:none}
+
+/* guide */
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{position:relative;padding:0 0 12px 38px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--rust);color:#fff;font:600 13px/26px var(--sans);text-align:center}
+.steps li>b{display:block;font-size:15px}
+.steps li p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.rules{margin:0;padding-left:18px}
+.rules li{margin:0 0 7px;font-size:14px}
+.pin{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-top:10px;background:var(--cream)}
+.pin h4{font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.pin ol{margin:0;padding-left:20px;font-size:14px}
+.pin li{margin:0 0 5px}
+.notes{margin:12px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+.notes li{margin:0 0 6px}
+.ok-line{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ok);background:var(--ok-t);border-radius:10px;padding:9px 12px;margin-bottom:6px}
+.ver{text-align:center;font-size:12px;color:var(--muted);margin:16px 0 0}
+.kbd{display:inline-block;padding:0 6px;border:1px solid var(--line2);border-radius:6px;background:#fff;font-size:13px;line-height:20px}
+
+/* nav */
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabs-in{max-width:600px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav)}
+.tabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;font-weight:600;color:var(--muted);position:relative}
+.tabs button.on{color:var(--rust)}
+.tabs button.on::before{content:"";position:absolute;top:0;left:28%;right:28%;height:3px;border-radius:0 0 3px 3px;background:var(--rust)}
+.tabs .cnt{position:absolute;top:7px;left:calc(50% + 6px);min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--rust);color:#fff;font-size:11px;line-height:18px;text-align:center}
+
+/* sheets */
+.layer{position:fixed;inset:0;z-index:40;background:rgba(30,24,20,.42);display:flex;align-items:flex-end;justify-content:center}
+.layer[hidden]{display:none}
+.sheet{width:100%;max-width:600px;max-height:92vh;max-height:92dvh;overflow:auto;background:var(--cream);border-radius:18px 18px 0 0;padding:6px 14px calc(18px + env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line2);margin:4px auto 8px}
+.sh-h{display:flex;align-items:center;gap:10px;margin:2px 0 10px}
+.sh-h h3{flex:1;font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.15}
+.dl{display:grid;grid-template-columns:max-content 1fr;gap:7px 12px;margin:0;font-size:14px}
+.dl dt{color:var(--muted);font-size:13px}
+.dl dd{margin:0;word-break:break-word}
+.acts{display:flex;gap:8px;margin:0 0 12px}
+.acts a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border-radius:12px;background:#fff;border:1px solid var(--line2);color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pgrid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.meta{font-size:12px;color:var(--muted);margin:12px 0}
+.notebox{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.tagrow{display:flex;gap:8px;align-items:center;margin:0 0 8px}
+.tagrow input{flex:1;min-height:42px;padding:8px 10px}
+.tagrow small{color:var(--muted);font-size:12px;min-width:24px;text-align:right}
+.danger-zone{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line2)}
+.confirm{width:calc(100% - 32px);max-width:420px;align-self:center;background:#fff;border-radius:16px;padding:18px}
+.confirm h3{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:6px}
+.confirm p{margin:0 0 14px;color:var(--muted)}
+.layer.center{align-items:center}
+.viewer{background:rgba(0,0,0,.9);align-items:center}
+.viewer img{max-width:100%;max-height:100%;object-fit:contain}
+.toast{position:fixed;left:50%;bottom:calc(var(--nav) + 18px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.2s;z-index:60;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.banner{background:#FFF1EE;border:1px solid #F0C9C0;color:var(--rust);border-radius:12px;padding:10px 12px;font-size:13px;margin-bottom:10px}
+.langbig{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0 12px}
+.langbig button{min-height:44px;border-radius:12px;border:1px solid var(--line2);background:#fff;font-weight:600}
+.langbig button.on{background:var(--rust);border-color:var(--rust);color:#fff}
+@media (max-width:360px){.row2{grid-template-columns:1fr}.logo{height:28px}.lang button{padding:6px 6px}}
+@media (min-width:700px){body{font-size:15.5px}.sheet{border-radius:18px;margin-bottom:24px}.layer{align-items:center}}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<main id="view"></main>
+<nav class="tabs" id="tabs"></nav>
+<div class="layer" id="sheet-wrap" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div class="layer center" id="confirm-wrap" hidden><div class="confirm" id="confirm" role="alertdialog" aria-modal="true"></div></div>
+<div class="layer viewer" id="viewer" hidden data-act="closeviewer"><img id="viewer-img" alt=""></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="photo-input" accept="image/*" multiple hidden>
+<input type="file" id="pack-input" accept=".html,.htm,.json,text/html,application/json" hidden>
+<script>
+'use strict';
+const LOGO='data:image/png;base64,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';
+const VERSION='1.0 · 12/10/2026';
+const MAX_PHOTOS=6;
+const TYPES=['to','agency','mice','fit','other'];
+const NEEDS=['quote','partner','docs','other'];
+const DESTS=['vn','la','kh','th'];
+const NEXTS=['quote','docs','call','none'];
+const PRIOS=['A','B','C'];
+const DEFAULT_TAGS=['culture','trek','lux','family','group','multi','partner'].map(k=>({id:'t_'+k,key:k}));
+const LOC={vi:'vi-VN',en:'en-GB',it:'it-IT'};
+
+/* ---------- i18n ---------- */
+const T={
+vi:{
+  tab_new:'Ghi mới',tab_list:'Danh sách',tab_handoff:'Chuyển giao',tab_guide:'Hướng dẫn',
+  settings:'Thiết lập',no_event:'Chưa đặt sự kiện',event:'Sự kiện',by:'Người ghi',
+  new_title:'Khách mới',edit_title:'Sửa thông tin khách',new_sub:'Ghi ngay sau khi gặp — mục có dấu * là bắt buộc.',
+  sec_contact:'Liên hệ',f_name:'Họ tên',f_company:'Công ty',f_title:'Chức danh',f_email:'Email',f_phone:'Điện thoại / WhatsApp',f_place:'Quốc gia · Thành phố',ph_place:'Italia · Milano',
+  rule_contact:'Bắt buộc: họ tên + ít nhất một trong ba — email, điện thoại hoặc ảnh danh thiếp.',
+  sec_type:'Loại khách',type_to:'Tour operator',type_agency:'Đại lý du lịch',type_mice:'Doanh nghiệp · MICE',type_fit:'Khách lẻ',type_other:'Khác (báo chí, nhà cung cấp…)',
+  sec_need:'Nhu cầu',f_needs:'Khách cần gì',need_quote:'Báo giá tour',need_partner:'Hợp tác lâu dài',need_docs:'Tài liệu · catalogue',need_other:'Khác',
+  f_dest:'Điểm đến',dest_vn:'Việt Nam',dest_la:'Lào',dest_kh:'Campuchia',dest_th:'Thái Lan',
+  f_month:'Thời gian dự kiến',f_pax:'Số khách',f_next:'Bước tiếp đã hứa với khách',next_quote:'Gửi báo giá',next_docs:'Gửi tài liệu',next_call:'Hẹn gọi / họp',next_none:'Chưa hứa gì',
+  sec_prio:'Mức độ',prio_A:'Nóng',prio_B:'Ấm',prio_C:'Tìm hiểu',
+  prio_A_rule:'Có yêu cầu cụ thể: điểm đến, thời gian hoặc số khách. Liên hệ lại trong 24 giờ.',
+  prio_B_rule:'Đúng đối tượng, có quan tâm, chưa có yêu cầu cụ thể.',
+  prio_C_rule:'Chỉ xin tài liệu, hoặc chưa rõ có phù hợp không.',
+  prio_suggest:'Gợi ý theo quy tắc: {p} — bấm để chọn',
+  sec_tags:'Thẻ phân nhóm',tags_hint:'Thẻ quyết định ai chăm sóc khách. Quản lý xuất danh sách theo thẻ.',tag_new:'Thẻ mới',tag_ph:'Tên thẻ',add:'Thêm',
+  sec_media:'Ảnh & ghi chú',add_photo:'Chụp / chọn ảnh',photo_hint:'Danh thiếp, ảnh chụp cùng khách, tài liệu khách đưa. Tối đa 6 ảnh.',f_note:'Ghi chú',ph_note:'Điều khách quan tâm, chi tiết cần nhớ…',
+  btn_save:'Lưu khách',btn_update:'Lưu thay đổi',btn_cancel:'Huỷ',saved:'Đã lưu {name}',updated:'Đã cập nhật {name}',
+  err_name:'Nhập họ tên.',err_reach:'Cần email, điện thoại hoặc ảnh danh thiếp.',err_type:'Chọn loại khách.',err_prio:'Chọn mức độ.',err_photo:'Không đọc được ảnh này.',max_photo:'Tối đa 6 ảnh mỗi khách.',
+  dup_title:'Có thể trùng khách',dup_body:'{name} ({company}) đã được {by} ghi với cùng email hoặc số điện thoại. Vẫn lưu?',btn_save_anyway:'Vẫn lưu',
+  search_ph:'Tìm tên, công ty, email, ghi chú…',f_all:'Tất cả',f_inc:'Cần bổ sung',badge_inc:'Thiếu email/SĐT',count:'{n} khách',
+  empty:'Chưa có khách nào. Bấm Ghi mới để bắt đầu.',no_match:'Không có khách khớp.',
+  btn_edit:'Sửa',btn_delete:'Xoá',btn_call:'Gọi',btn_mail:'Email',btn_wa:'WhatsApp',
+  confirm_delete:'Xoá {name} khỏi máy này?',deleted:'Đã xoá',recorded:'Ghi lúc {t} · {by}',updated_at:'sửa lúc {t}',
+  ho_title:'Chuyển giao',ho_sub:'Gửi khách theo nhóm thẻ cho đúng người, nhận gói từ đồng nghiệp.',
+  ho_send:'Gửi theo nhóm thẻ',ho_send_hint:'Chỉ khách khớp bộ lọc mới nằm trong file. Phần còn lại của danh sách không rời khỏi máy.',
+  ho_logic:'Chọn nhiều thẻ = lấy khách có ít nhất một thẻ. Mức độ và loại khách thu hẹp thêm.',
+  fc_tags:'Thẻ',fc_prio:'Mức độ',fc_type:'Loại khách',fc_by:'Người ghi',fc_event:'Sự kiện',
+  ho_match:'{n} khách khớp',ho_all:'Chưa chọn gì = toàn bộ khách trên máy này',ho_size:'khoảng {s}',ho_show:'Xem danh sách',ho_hide:'Ẩn danh sách',ho_clear:'Bỏ chọn',
+  btn_pack:'Gửi gói (kèm ảnh)',btn_xlsx:'Tải Excel',
+  pack_hint:'Gói .html: mở bằng trình duyệt nào cũng xem được, kèm ảnh; mở bằng công cụ này để nhập vào danh sách. File Excel để đưa vào CRM hoặc bảng tính, không kèm ảnh.',
+  ho_recv:'Nhận gói từ đồng nghiệp',ho_recv_hint:'Chọn file gói nhận qua Zalo, WhatsApp hoặc email. Khách trùng sẽ giữ bản mới nhất.',btn_import:'Chọn file gói',
+  import_done:'Đã nhận: {a} mới · {u} cập nhật · {s} giữ nguyên',import_bad:'File này không phải gói của công cụ.',import_tags:'Đã thêm {n} thẻ mới.',
+  import_event_q:'Gói có sự kiện “{e}”. Dùng làm sự kiện cho khách ghi mới trên máy này?',btn_use:'Dùng sự kiện này',btn_keep:'Giữ như cũ',
+  nothing:'Không có khách nào để gửi.',sent:'Đã tạo file {f}',
+  s_you:'Tên của bạn',s_you_hint:'Ghi kèm mỗi khách để đội biết ai đã gặp.',s_event:'Sự kiện đang tham gia',ph_event:'VD: Hội chợ Ý · 10/2026',
+  s_tags:'Danh sách thẻ',s_tags_hint:'Quản lý đặt bộ thẻ trước sự kiện rồi gửi thiết lập cho cả đội, để mọi người dùng chung một bộ thẻ.',
+  btn_setup:'Gửi thiết lập cho đội',btn_backup:'Sao lưu toàn bộ',btn_erase:'Xoá toàn bộ khách trên máy',
+  confirm_erase:'Xoá toàn bộ {n} khách trên máy này? Không khôi phục được nếu chưa gửi gói.',erased:'Đã xoá dữ liệu khách',
+  confirm_tagdel:'Xoá thẻ “{t}”? Thẻ sẽ được gỡ khỏi {n} khách.',
+  s_data:'Dữ liệu chỉ nằm trên máy này — không có máy chủ, không gửi đi đâu nếu bạn không bấm Gửi.',btn_done:'Xong',btn_ok:'Đồng ý',
+  ob_title:'Bắt đầu',ob_body:'Chọn ngôn ngữ, nhập tên bạn và sự kiện. Có thể đổi sau trong Thiết lập.',ob_pin:'Mẹo: ghim công cụ ra màn hình chính để mở nhanh như app — xem tab Hướng dẫn.',btn_start:'Bắt đầu',err_you:'Nhập tên của bạn.',
+  no_storage:'Trình duyệt đang chặn lưu dữ liệu — khách sẽ mất khi đóng trang. Hãy gửi gói ngay sau khi ghi.',
+  g_flow:'Dùng trong 4 bước',g_rules:'Quy tắc nhập',g_pin:'Ghim ra màn hình chính',g_data:'Lưu ý về dữ liệu',
+  g_standalone:'Bạn đang mở công cụ từ màn hình chính.',btn_install:'Cài lên màn hình chính',
+  g_steps:[
+    ['Trước sự kiện','Quản lý đặt tên sự kiện và bộ thẻ trong <b>Thiết lập</b>, rồi bấm <b>Gửi thiết lập cho đội</b>. Mỗi người mở file nhận được ở <b>Chuyển giao → Chọn file gói</b> và nhập tên mình.'],
+    ['Tại gian hàng','Mỗi khách một phiếu, lưu ngay sau cuộc gặp. Đang vội thì chụp danh thiếp, ghi tên, chọn loại khách và mức độ rồi lưu; bổ sung sau ở <b>Danh sách</b>.'],
+    ['Cuối mỗi ngày','Vào <b>Chuyển giao</b>, không chọn thẻ nào, bấm <b>Gửi gói</b> cho quản lý qua Zalo, WhatsApp hoặc email. Gói này cũng là bản sao lưu.'],
+    ['Chia khách cho đội chăm sóc','Quản lý nhận gói của cả đội, chọn thẻ (ví dụ Trekking + mức A) rồi <b>Gửi gói</b> cho đúng người. Mỗi người chỉ nhận nhóm khách của mình.']],
+  g_rule_list:[
+    'Bắt buộc 4 mục: họ tên · email, điện thoại hoặc ảnh danh thiếp · loại khách · mức độ.',
+    '<b>A</b> — liên hệ lại trong 24 giờ. <b>B</b> — gửi lời cảm ơn trong 24 giờ rồi chăm dần. <b>C</b> — gửi tài liệu trong 3 ngày.',
+    'Luôn chọn <b>Bước tiếp đã hứa</b> để người chăm sóc giữ đúng lời với khách.',
+    'Gắn ít nhất một thẻ khi đã biết khách thuộc nhóm nào — thẻ quyết định ai nhận khách.'],
+  g_ios:['Mở link công cụ bằng <b>Safari</b>.','Bấm nút <b>Chia sẻ</b> (ô vuông có mũi tên lên). Trên iOS 26: bấm <span class="kbd">•••</span> rồi <b>Chia sẻ</b>.','Chọn <b>Thêm vào MH chính</b>, rồi bấm <b>Thêm</b>.'],
+  g_and:['Mở link công cụ bằng <b>Chrome</b>.','Bấm <span class="kbd">⋮</span> ở góc trên bên phải.','Chọn <b>Thêm vào màn hình chính</b> hoặc <b>Cài đặt ứng dụng</b>, rồi xác nhận.'],
+  g_notes:['Từ đó luôn mở công cụ bằng icon. Trên iPhone, Safari và icon giữ hai kho dữ liệu riêng.','Dữ liệu chỉ nằm trên máy này, không có máy chủ. Gửi gói cuối ngày để không mất khi đổi máy hoặc xoá dữ liệu trình duyệt.','Ảnh được thu nhỏ khi lưu để gói gửi đi nhẹ.'],
+  tag_culture:'Văn hoá · trải nghiệm',tag_trek:'Trekking · thiên nhiên',tag_lux:'Cao cấp',tag_family:'Gia đình',tag_group:'Đoàn 10+ khách',tag_multi:'Kết hợp nhiều nước',tag_partner:'Đã là đối tác',
+  pack_title:'Gói khách',setup_title:'Thiết lập sự kiện',backup_title:'Sao lưu',pack_meta:'{n} khách · xuất bởi {by} · {t}',pack_open:'Để đưa các khách này vào danh sách: mở công cụ Vietcone Leads → Chuyển giao → Chọn file gói.',pack_all:'Toàn bộ khách',pack_tags:'Bộ thẻ',
+  col_photos:'Số ảnh',col_created:'Thời điểm ghi',sheet:'Khach'
+},
+en:{
+  tab_new:'New',tab_list:'Leads',tab_handoff:'Hand-off',tab_guide:'Guide',
+  settings:'Settings',no_event:'No event set',event:'Event',by:'Recorded by',
+  new_title:'New lead',edit_title:'Edit lead',new_sub:'Fill it in right after the conversation — fields with * are required.',
+  sec_contact:'Contact',f_name:'Full name',f_company:'Company',f_title:'Job title',f_email:'Email',f_phone:'Phone / WhatsApp',f_place:'Country · City',ph_place:'Italy · Milan',
+  rule_contact:'Required: name + at least one of email, phone or a business-card photo.',
+  sec_type:'Contact type',type_to:'Tour operator',type_agency:'Travel agency',type_mice:'Corporate · MICE',type_fit:'Private traveller',type_other:'Other (press, supplier…)',
+  sec_need:'Request',f_needs:'What they need',need_quote:'Tour quote',need_partner:'Long-term partnership',need_docs:'Brochure · catalogue',need_other:'Other',
+  f_dest:'Destinations',dest_vn:'Vietnam',dest_la:'Laos',dest_kh:'Cambodia',dest_th:'Thailand',
+  f_month:'Planned travel',f_pax:'Travellers',f_next:'Next step promised',next_quote:'Send quote',next_docs:'Send brochure',next_call:'Schedule a call',next_none:'Nothing yet',
+  sec_prio:'Priority',prio_A:'Hot',prio_B:'Warm',prio_C:'Browsing',
+  prio_A_rule:'Concrete request: destination, dates or group size. Follow up within 24 hours.',
+  prio_B_rule:'Right profile and interested, no concrete request yet.',
+  prio_C_rule:'Only wants material, or the fit is unclear.',
+  prio_suggest:'Rule suggests: {p} — tap to choose',
+  sec_tags:'Group tags',tags_hint:'Tags decide who follows up. The manager exports leads by tag.',tag_new:'New tag',tag_ph:'Tag name',add:'Add',
+  sec_media:'Photos & notes',add_photo:'Take / choose photo',photo_hint:'Business card, photo with the guest, documents received. Up to 6 photos.',f_note:'Notes',ph_note:'What they care about, details to remember…',
+  btn_save:'Save lead',btn_update:'Save changes',btn_cancel:'Cancel',saved:'Saved {name}',updated:'Updated {name}',
+  err_name:'Enter a name.',err_reach:'Add an email, phone or business-card photo.',err_type:'Choose a contact type.',err_prio:'Choose a priority.',err_photo:'Could not read this photo.',max_photo:'Up to 6 photos per lead.',
+  dup_title:'Possible duplicate',dup_body:'{name} ({company}) was already saved by {by} with the same email or phone. Save anyway?',btn_save_anyway:'Save anyway',
+  search_ph:'Search name, company, email, notes…',f_all:'All',f_inc:'Incomplete',badge_inc:'No email/phone',count:'{n} leads',
+  empty:'No leads yet. Tap New to start.',no_match:'No matching leads.',
+  btn_edit:'Edit',btn_delete:'Delete',btn_call:'Call',btn_mail:'Email',btn_wa:'WhatsApp',
+  confirm_delete:'Delete {name} from this device?',deleted:'Deleted',recorded:'Saved {t} · {by}',updated_at:'edited {t}',
+  ho_title:'Hand-off',ho_sub:'Send leads by tag group to the right person, and receive packs from colleagues.',
+  ho_send:'Send by tag group',ho_send_hint:'Only leads matching the filter go into the file. The rest of the list stays on this device.',
+  ho_logic:'Several tags = leads with at least one of them. Priority and type narrow it down.',
+  fc_tags:'Tags',fc_prio:'Priority',fc_type:'Contact type',fc_by:'Recorded by',fc_event:'Event',
+  ho_match:'{n} matching leads',ho_all:'Nothing selected = every lead on this device',ho_size:'about {s}',ho_show:'Show list',ho_hide:'Hide list',ho_clear:'Clear',
+  btn_pack:'Send pack (with photos)',btn_xlsx:'Download Excel',
+  pack_hint:'The .html pack opens in any browser, photos included; open it with this tool to add the leads. The Excel file is for a CRM or spreadsheet, without photos.',
+  ho_recv:'Receive a pack',ho_recv_hint:'Choose a pack file received via Zalo, WhatsApp or email. Duplicates keep the newest version.',btn_import:'Choose pack file',
+  import_done:'Received: {a} new · {u} updated · {s} unchanged',import_bad:'This file is not a pack from this tool.',import_tags:'{n} new tags added.',
+  import_event_q:'The pack uses event “{e}”. Use it for new leads on this device?',btn_use:'Use this event',btn_keep:'Keep current',
+  nothing:'No leads to send.',sent:'Created {f}',
+  s_you:'Your name',s_you_hint:'Saved with each lead so the team knows who met them.',s_event:'Current event',ph_event:'e.g. Italy fair · Oct 2026',
+  s_tags:'Tag list',s_tags_hint:'The manager prepares the tags before the event and sends the setup to the team, so everyone uses the same set.',
+  btn_setup:'Send setup to team',btn_backup:'Back up everything',btn_erase:'Erase all leads on this device',
+  confirm_erase:'Erase all {n} leads on this device? This cannot be undone unless a pack was sent.',erased:'Leads erased',
+  confirm_tagdel:'Delete tag “{t}”? It will be removed from {n} leads.',
+  s_data:'Data stays on this device — there is no server and nothing is sent unless you tap Send.',btn_done:'Done',btn_ok:'OK',
+  ob_title:'Get started',ob_body:'Pick a language, enter your name and the event. You can change them later in Settings.',ob_pin:'Tip: pin the tool to your home screen to open it like an app — see the Guide tab.',btn_start:'Start',err_you:'Enter your name.',
+  no_storage:'This browser is blocking storage — leads will be lost when the page closes. Send a pack right after saving.',
+  g_flow:'Four steps',g_rules:'Entry rules',g_pin:'Add to Home Screen',g_data:'About your data',
+  g_standalone:'You are using the tool from your home screen.',btn_install:'Install on home screen',
+  g_steps:[
+    ['Before the event','The manager sets the event name and tag list in <b>Settings</b>, then taps <b>Send setup to team</b>. Each person opens the received file in <b>Hand-off → Choose pack file</b> and enters their own name.'],
+    ['At the booth','One form per guest, saved right after the conversation. In a rush: snap the business card, type the name, pick type and priority, save — complete it later from <b>Leads</b>.'],
+    ['End of each day','Go to <b>Hand-off</b>, select no tags, tap <b>Send pack</b> to the manager via Zalo, WhatsApp or email. The pack is also your backup.'],
+    ['Distribute to the follow-up team','The manager receives everyone’s packs, picks tags (e.g. Trekking + priority A) and taps <b>Send pack</b> for the right person. Each person only gets their own group.']],
+  g_rule_list:[
+    'Four required items: name · email, phone or business-card photo · contact type · priority.',
+    '<b>A</b> — follow up within 24 hours. <b>B</b> — thank-you within 24 hours, then nurture. <b>C</b> — send material within 3 days.',
+    'Always pick the <b>Next step promised</b> so the follow-up keeps your word.',
+    'Add at least one tag once you know the group — tags decide who takes the lead.'],
+  g_ios:['Open the tool link in <b>Safari</b>.','Tap <b>Share</b> (square with an up arrow). On iOS 26: tap <span class="kbd">•••</span> then <b>Share</b>.','Choose <b>Add to Home Screen</b>, then <b>Add</b>.'],
+  g_and:['Open the tool link in <b>Chrome</b>.','Tap <span class="kbd">⋮</span> in the top-right corner.','Choose <b>Add to Home screen</b> or <b>Install app</b>, then confirm.'],
+  g_notes:['From then on, always open the tool from the icon. On iPhone, Safari and the icon keep separate data.','Data stays on this device — there is no server. Send a pack at the end of each day so nothing is lost if the phone changes or the browser is cleared.','Photos are resized on save so packs stay light.'],
+  tag_culture:'Culture · experiences',tag_trek:'Trekking · nature',tag_lux:'Luxury',tag_family:'Family',tag_group:'Group 10+',tag_multi:'Multi-country',tag_partner:'Existing partner',
+  pack_title:'Lead pack',setup_title:'Event setup',backup_title:'Backup',pack_meta:'{n} leads · exported by {by} · {t}',pack_open:'To add these leads: open Vietcone Leads → Hand-off → Choose pack file.',pack_all:'All leads',pack_tags:'Tag set',
+  col_photos:'Photos',col_created:'Saved at',sheet:'Leads'
+},
+it:{
+  tab_new:'Nuovo',tab_list:'Contatti',tab_handoff:'Consegna',tab_guide:'Guida',
+  settings:'Impostazioni',no_event:'Nessun evento',event:'Evento',by:'Registrato da',
+  new_title:'Nuovo contatto',edit_title:'Modifica contatto',new_sub:'Compila subito dopo il colloquio — i campi con * sono obbligatori.',
+  sec_contact:'Contatto',f_name:'Nome e cognome',f_company:'Azienda',f_title:'Ruolo',f_email:'Email',f_phone:'Telefono / WhatsApp',f_place:'Paese · Città',ph_place:'Italia · Milano',
+  rule_contact:'Obbligatorio: nome + almeno uno tra email, telefono o foto del biglietto da visita.',
+  sec_type:'Tipo di contatto',type_to:'Tour operator',type_agency:'Agenzia di viaggi',type_mice:'Aziende · MICE',type_fit:'Viaggiatore privato',type_other:'Altro (stampa, fornitore…)',
+  sec_need:'Richiesta',f_needs:'Cosa chiede',need_quote:'Preventivo tour',need_partner:'Partnership',need_docs:'Brochure · catalogo',need_other:'Altro',
+  f_dest:'Destinazioni',dest_vn:'Vietnam',dest_la:'Laos',dest_kh:'Cambogia',dest_th:'Thailandia',
+  f_month:'Periodo previsto',f_pax:'N. viaggiatori',f_next:'Prossimo passo promesso',next_quote:'Inviare preventivo',next_docs:'Inviare brochure',next_call:'Fissare una call',next_none:'Niente per ora',
+  sec_prio:'Priorità',prio_A:'Caldo',prio_B:'Tiepido',prio_C:'Informativo',
+  prio_A_rule:'Richiesta concreta: destinazione, date o numero di persone. Ricontattare entro 24 ore.',
+  prio_B_rule:'Profilo giusto e interessato, ancora senza richiesta concreta.',
+  prio_C_rule:'Chiede solo materiale, o non è chiaro se è in target.',
+  prio_suggest:'Suggerimento: {p} — tocca per scegliere',
+  sec_tags:'Etichette di gruppo',tags_hint:'Le etichette decidono chi segue il contatto. Il responsabile esporta per etichetta.',tag_new:'Nuova etichetta',tag_ph:'Nome etichetta',add:'Aggiungi',
+  sec_media:'Foto e note',add_photo:'Scatta / scegli foto',photo_hint:'Biglietto da visita, foto con il cliente, documenti ricevuti. Massimo 6 foto.',f_note:'Note',ph_note:'Interessi del cliente, dettagli da ricordare…',
+  btn_save:'Salva contatto',btn_update:'Salva modifiche',btn_cancel:'Annulla',saved:'{name} salvato',updated:'{name} aggiornato',
+  err_name:'Inserisci il nome.',err_reach:'Serve email, telefono o foto del biglietto.',err_type:'Scegli il tipo di contatto.',err_prio:'Scegli la priorità.',err_photo:'Impossibile leggere questa foto.',max_photo:'Massimo 6 foto per contatto.',
+  dup_title:'Possibile duplicato',dup_body:'{name} ({company}) è già stato registrato da {by} con la stessa email o telefono. Salvare comunque?',btn_save_anyway:'Salva comunque',
+  search_ph:'Cerca nome, azienda, email, note…',f_all:'Tutti',f_inc:'Da completare',badge_inc:'Senza email/tel.',count:'{n} contatti',
+  empty:'Nessun contatto. Tocca Nuovo per iniziare.',no_match:'Nessun contatto corrispondente.',
+  btn_edit:'Modifica',btn_delete:'Elimina',btn_call:'Chiama',btn_mail:'Email',btn_wa:'WhatsApp',
+  confirm_delete:'Eliminare {name} da questo dispositivo?',deleted:'Eliminato',recorded:'Salvato {t} · {by}',updated_at:'modificato {t}',
+  ho_title:'Consegna',ho_sub:'Invia i contatti per etichetta alla persona giusta e ricevi i pacchetti dai colleghi.',
+  ho_send:'Invia per gruppo',ho_send_hint:'Nel file finiscono solo i contatti che corrispondono al filtro. Il resto dell’elenco resta su questo dispositivo.',
+  ho_logic:'Più etichette = contatti con almeno una di esse. Priorità e tipo restringono la selezione.',
+  fc_tags:'Etichette',fc_prio:'Priorità',fc_type:'Tipo di contatto',fc_by:'Registrato da',fc_event:'Evento',
+  ho_match:'{n} contatti corrispondenti',ho_all:'Nessun filtro = tutti i contatti su questo dispositivo',ho_size:'circa {s}',ho_show:'Mostra elenco',ho_hide:'Nascondi elenco',ho_clear:'Azzera',
+  btn_pack:'Invia pacchetto (con foto)',btn_xlsx:'Scarica Excel',
+  pack_hint:'Il pacchetto .html si apre in qualsiasi browser, foto incluse; aprilo con questo strumento per importare i contatti. Il file Excel serve per CRM o fogli di calcolo, senza foto.',
+  ho_recv:'Ricevi un pacchetto',ho_recv_hint:'Scegli un file ricevuto via Zalo, WhatsApp o email. Per i duplicati resta la versione più recente.',btn_import:'Scegli file',
+  import_done:'Ricevuti: {a} nuovi · {u} aggiornati · {s} invariati',import_bad:'Il file non è un pacchetto di questo strumento.',import_tags:'Aggiunte {n} nuove etichette.',
+  import_event_q:'Il pacchetto usa l’evento “{e}”. Usarlo per i nuovi contatti su questo dispositivo?',btn_use:'Usa questo evento',btn_keep:'Lascia com’è',
+  nothing:'Nessun contatto da inviare.',sent:'Creato {f}',
+  s_you:'Il tuo nome',s_you_hint:'Salvato con ogni contatto, così il team sa chi l’ha incontrato.',s_event:'Evento in corso',ph_event:'es. Fiera Italia · ott 2026',
+  s_tags:'Elenco etichette',s_tags_hint:'Il responsabile prepara le etichette prima dell’evento e invia le impostazioni al team, così tutti usano le stesse.',
+  btn_setup:'Invia impostazioni al team',btn_backup:'Backup completo',btn_erase:'Cancella tutti i contatti dal dispositivo',
+  confirm_erase:'Cancellare tutti i {n} contatti da questo dispositivo? Non si può annullare se non hai inviato un pacchetto.',erased:'Contatti cancellati',
+  confirm_tagdel:'Eliminare l’etichetta “{t}”? Verrà tolta da {n} contatti.',
+  s_data:'I dati restano su questo dispositivo — nessun server, nulla viene inviato se non tocchi Invia.',btn_done:'Fatto',btn_ok:'OK',
+  ob_title:'Iniziamo',ob_body:'Scegli la lingua, inserisci il tuo nome e l’evento. Puoi cambiarli dopo in Impostazioni.',ob_pin:'Consiglio: aggiungi lo strumento alla schermata Home per aprirlo come un’app — vedi la scheda Guida.',btn_start:'Inizia',err_you:'Inserisci il tuo nome.',
+  no_storage:'Il browser blocca il salvataggio: i contatti andranno persi chiudendo la pagina. Invia un pacchetto subito dopo aver salvato.',
+  g_flow:'Quattro passi',g_rules:'Regole di inserimento',g_pin:'Aggiungi alla schermata Home',g_data:'I tuoi dati',
+  g_standalone:'Stai usando lo strumento dalla schermata Home.',btn_install:'Installa sulla schermata Home',
+  g_steps:[
+    ['Prima dell’evento','Il responsabile imposta nome dell’evento ed etichette in <b>Impostazioni</b>, poi tocca <b>Invia impostazioni al team</b>. Ognuno apre il file ricevuto in <b>Consegna → Scegli file</b> e inserisce il proprio nome.'],
+    ['Allo stand','Una scheda per ogni cliente, salvata subito dopo il colloquio. Se c’è fretta: foto del biglietto, nome, tipo e priorità, salva — completi dopo da <b>Contatti</b>.'],
+    ['A fine giornata','Vai su <b>Consegna</b>, nessuna etichetta selezionata, tocca <b>Invia pacchetto</b> al responsabile via Zalo, WhatsApp o email. Il pacchetto è anche il tuo backup.'],
+    ['Assegnare i contatti al team','Il responsabile riceve i pacchetti di tutti, sceglie le etichette (es. Trekking + priorità A) e tocca <b>Invia pacchetto</b> per la persona giusta. Ognuno riceve solo il proprio gruppo.']],
+  g_rule_list:[
+    'Quattro dati obbligatori: nome · email, telefono o foto del biglietto · tipo di contatto · priorità.',
+    '<b>A</b> — ricontattare entro 24 ore. <b>B</b> — ringraziare entro 24 ore, poi seguire nel tempo. <b>C</b> — inviare materiale entro 3 giorni.',
+    'Indica sempre il <b>Prossimo passo promesso</b>, così chi segue il cliente mantiene la parola data.',
+    'Aggiungi almeno un’etichetta quando conosci il gruppo: l’etichetta decide chi segue il contatto.'],
+  g_ios:['Apri il link dello strumento con <b>Safari</b>.','Tocca <b>Condividi</b> (quadrato con freccia in su). Su iOS 26: tocca <span class="kbd">•••</span> e poi <b>Condividi</b>.','Scegli <b>Aggiungi alla schermata Home</b>, poi <b>Aggiungi</b>.'],
+  g_and:['Apri il link dello strumento con <b>Chrome</b>.','Tocca <span class="kbd">⋮</span> in alto a destra.','Scegli <b>Aggiungi a schermata Home</b> o <b>Installa app</b>, poi conferma.'],
+  g_notes:['Da quel momento apri sempre lo strumento dall’icona. Su iPhone, Safari e l’icona hanno dati separati.','I dati restano su questo dispositivo, non c’è un server. Invia un pacchetto a fine giornata per non perdere nulla se cambi telefono o cancelli i dati del browser.','Le foto vengono ridotte al salvataggio per tenere leggeri i pacchetti.'],
+  tag_culture:'Cultura · esperienze',tag_trek:'Trekking · natura',tag_lux:'Lusso',tag_family:'Famiglia',tag_group:'Gruppo 10+',tag_multi:'Multi-paese',tag_partner:'Già partner',
+  pack_title:'Pacchetto contatti',setup_title:'Impostazioni evento',backup_title:'Backup',pack_meta:'{n} contatti · esportato da {by} · {t}',pack_open:'Per importarli: apri Vietcone Leads → Consegna → Scegli file.',pack_all:'Tutti i contatti',pack_tags:'Etichette',
+  col_photos:'Foto',col_created:'Salvato il',sheet:'Contatti'
+}};
+function t(k,v){let s=(T[S.lang]&&T[S.lang][k]);if(s==null)s=T.vi[k];if(s==null)return k;if(v)for(const x in v)s=s.split('{'+x+'}').join(v[x]);return s}
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>(window.crypto&&crypto.randomUUID)?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2,10);
+const nowISO=()=>new Date().toISOString();
+const digits=s=>String(s||'').replace(/\D/g,'');
+const isStandalone=()=>(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const IC={
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  list:'<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="2.6"/>',
+  send:'<path d="M21 3 10 14"/><path d="M21 3 14.5 21l-4.5-7-7-4.5z"/>',
+  help:'<circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.7.3-1 .8-1 1.5v.4"/><path d="M12 17h.01" stroke-width="2.6"/>',
+  gear:'<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/>',
+  cam:'<path d="M4 8.5h3l1.8-2.5h6.4L17 8.5h3V19H4z"/><circle cx="12" cy="13.3" r="3.3"/>',
+  x:'<path d="M6 6l12 12M18 6 6 18"/>',
+  phone:'<path d="M5.5 4h3l1.8 4.6-2.2 1.4a11 11 0 0 0 5.9 5.9l1.4-2.2L20 15.5v3a2 2 0 0 1-2.1 2A16.5 16.5 0 0 1 3.5 6.1 2 2 0 0 1 5.5 4z"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+  chat:'<path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20l1.1-4.4a8.4 8.4 0 1 1 15.9-4z"/>',
+  edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+  trash:'<path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/>',
+  search:'<circle cx="11" cy="11" r="6.5"/><path d="m20 20-4-4"/>',
+  down:'<path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/>',
+  up:'<path d="M12 16V5M7 9.5l5-5 5 5M5 20h14"/>',
+  img:'<rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="m21 16.5-5-5-9 8"/>',
+  next:'<path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/>',
+  check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+  apple:'<path d="M15.5 4.5c-.9.1-2 .7-2.6 1.5-.6.7-1 1.7-.9 2.6 1 .1 2-.5 2.6-1.3.6-.8 1-1.8.9-2.8zM18.6 15.6c-.5 1.1-.7 1.6-1.3 2.6-.9 1.4-2.1 3.1-3.6 3.1-1.3 0-1.7-.9-3.5-.8-1.8 0-2.2.8-3.5.8-1.5 0-2.7-1.6-3.5-3C1.1 14.4.9 10 2.4 7.6 3.5 5.9 5.2 5 6.8 5c1.6 0 2.6.9 3.9.9 1.3 0 2.1-.9 3.9-.9 1.4 0 2.9.8 4 2.1-3.5 1.9-2.9 6.9 0 8.5z"/>',
+  droid:'<path d="M6 10h12v7.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 17.5zM6 10a6 6 0 0 1 12 0M8.5 4.5 7 3M15.5 4.5 17 3"/><path d="M9.5 7.2h.01M14.5 7.2h.01" stroke-width="2.4"/>'
+};
+const ic=(n,c)=>`<svg class="i${c?' '+c:''}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>el.classList.remove('show'),2600)}
+function fmtTime(iso){if(!iso)return'';const d=new Date(iso);const same=d.toDateString()===new Date().toDateString();try{return new Intl.DateTimeFormat(LOC[S.lang],same?{hour:'2-digit',minute:'2-digit'}:{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(d)}catch(e){return d.toLocaleString()}}
+function fmtFull(iso){if(!iso)return'';try{return new Intl.DateTimeFormat(LOC[S.lang],{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso))}catch(e){return iso}}
+function fmtMonth(m){if(!m||!/^\d{4}-\d{2}$/.test(m))return m||'';const[y,mo]=m.split('-');try{return new Intl.DateTimeFormat(LOC[S.lang],{month:'short',year:'numeric'}).format(new Date(+y,+mo-1,1))}catch(e){return m}}
+function fmtSize(b){const mb=b/1048576;return mb<1?Math.max(1,Math.round(b/1024))+' KB':mb.toLocaleString(LOC[S.lang],{maximumFractionDigits:1})+' MB'}
+function slug(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'').toLowerCase().slice(0,40)}
+function stamp(){const d=new Date(),p=n=>String(n).padStart(2,'0');return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`}
+
+/* ---------- state & storage ---------- */
+const S={lang:'vi',name:'',event:'',tags:DEFAULT_TAGS.slice(),ob:false,leads:[],tab:'new',editId:null,draft:null,lf:'all',lq:'',
+  ho:{tags:new Set(),prio:new Set(),type:new Set(),by:new Set(),event:new Set()},hoPrev:false,lastImport:'',dbOk:true,installEvt:null,addingTag:false,sheet:null};
+const LS_KEY='vietcone-leads-settings';
+function loadSettings(){try{const o=JSON.parse(localStorage.getItem(LS_KEY)||'null');if(o){['lang','name','event','ob'].forEach(k=>{if(o[k]!=null)S[k]=o[k]});if(Array.isArray(o.tags))S.tags=o.tags}else{const l=(navigator.language||'vi').slice(0,2);S.lang=l==='it'?'it':l==='en'?'en':'vi'}}catch(e){}}
+function saveSettings(){try{localStorage.setItem(LS_KEY,JSON.stringify({lang:S.lang,name:S.name,event:S.event,ob:S.ob,tags:S.tags}))}catch(e){}}
+const DB={db:null,
+  open(){return new Promise(res=>{try{const r=indexedDB.open('vietcone-leads',1);r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains('leads'))d.createObjectStore('leads',{keyPath:'id'})};r.onsuccess=()=>{DB.db=r.result;res(true)};r.onerror=()=>res(false);r.onblocked=()=>res(false)}catch(e){res(false)}})},
+  tx(mode,fn){return new Promise((res,rej)=>{if(!DB.db)return res(null);try{const tx=DB.db.transaction('leads',mode);const st=tx.objectStore('leads');const out=fn(st);tx.oncomplete=()=>res(out&&out.result!==undefined?out.result:null);tx.onerror=()=>rej(tx.error)}catch(e){rej(e)}})},
+  all(){return DB.tx('readonly',st=>st.getAll())},
+  put(l){return DB.tx('readwrite',st=>st.put(l))},
+  del(id){return DB.tx('readwrite',st=>st.delete(id))},
+  clear(){return DB.tx('readwrite',st=>st.clear())}
+};
+let persistAsked=false;
+function askPersist(){if(persistAsked)return;persistAsked=true;try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}}
+
+/* ---------- tags ---------- */
+const tagById=id=>S.tags.find(x=>x.id===id);
+function tagLabel(tg){if(!tg)return'';return tg.label||t('tag_'+tg.key)||tg.key||tg.id}
+const normTag=s=>String(s||'').trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function findTagByLabel(label){const n=normTag(label);return S.tags.find(tg=>{if(normTag(tagLabel(tg))===n)return true;if(tg.key)return ['vi','en','it'].some(l=>normTag(T[l]['tag_'+tg.key])===n);return false})}
+function addTag(label){label=String(label||'').trim().slice(0,40);if(!label)return null;const ex=findTagByLabel(label);if(ex)return ex;const tg={id:'t'+uid().replace(/-/g,'').slice(0,10),label};S.tags.push(tg);saveSettings();return tg}
+
+/* ---------- labels ---------- */
+const typeL=k=>k?t('type_'+k):'';
+const listL=(arr,p)=>(arr||[]).map(k=>t(p+k)).join(', ');
+const tagsL=ids=>(ids||[]).map(id=>tagLabel(tagById(id))).filter(Boolean).join(', ');
+const incomplete=l=>!l.email&&!l.phone;
+
+/* ---------- draft ---------- */
+function newDraft(){return{name:'',company:'',title:'',email:'',phone:'',place:'',type:'',needs:[],dest:[],month:'',pax:'',next:'',prio:'',tags:[],photos:[],note:''}}
+function draftFromLead(l){return{name:l.name||'',company:l.company||'',title:l.title||'',email:l.email||'',phone:l.phone||'',place:l.place||'',type:l.type||'',needs:(l.needs||[]).slice(),dest:(l.dest||[]).slice(),month:l.month||'',pax:l.pax==null?'':String(l.pax),next:l.next||'',prio:l.prio||'',tags:(l.tags||[]).slice(),photos:(l.photos||[]).slice(),note:l.note||''}}
+function suggestPrio(d){
+  const when=!!(d.month||d.pax);
+  if((d.dest.length&&when)||(d.needs.includes('quote')&&when))return'A';
+  if(!d.type&&!d.needs.length)return'';
+  if(d.type==='other'||(d.needs.length===1&&d.needs[0]==='docs'))return'C';
+  return'B';
+}
+
+/* ---------- header / nav ---------- */
+function headerHTML(){
+  return `<div class="top-in">
+    <img class="logo" src="${LOGO}" alt="Vietcone Travel">
+    <button class="evchip" data-act="settings" aria-label="${esc(t('settings'))}"><span>${S.event?`<b>${esc(S.event)}</b>`:esc(t('no_event'))}${S.name?' · '+esc(S.name):''}</span></button>
+    <div class="lang" role="group" aria-label="Language">${['vi','en','it'].map(l=>`<button data-act="lang" data-v="${l}" class="${S.lang===l?'on':''}" aria-pressed="${S.lang===l}">${l.toUpperCase()}</button>`).join('')}</div>
+    <button class="icon-btn" data-act="settings" aria-label="${esc(t('settings'))}">${ic('gear')}</button>
+  </div>`;
+}
+function navHTML(){
+  const items=[['new','plus'],['list','list'],['handoff','send'],['guide','help']];
+  return `<div class="tabs-in">${items.map(([k,i])=>`<button data-act="tab" data-v="${k}" class="${S.tab===k?'on':''}" aria-current="${S.tab===k?'page':'false'}">${ic(i)}<span>${esc(t('tab_'+k))}</span>${k==='list'&&S.leads.length?`<i class="cnt">${S.leads.length}</i>`:''}</button>`).join('')}</div>`;
+}
+
+/* ---------- view: new / edit ---------- */
+function chip(k,v,label,on){return `<button type="button" class="chip${on?' on':''}" data-act="pick" data-k="${k}" data-v="${esc(v)}" aria-pressed="${on}">${esc(label)}</button>`}
+function field(f,label,type,o={}){
+  const v=S.draft[f]??'';
+  return `<div class="fld"><label class="lbl" for="f-${f}">${esc(label)}${o.req?' <i class="req">*</i>':''}</label><input id="f-${f}" data-f="${f}" type="${type}" value="${esc(v)}"${o.ph?` placeholder="${esc(o.ph)}"`:''}${o.im?` inputmode="${o.im}"`:''}${o.cap?` autocapitalize="${o.cap}"`:''} autocomplete="off" enterkeyhint="next"${type==='email'?' autocorrect="off" autocapitalize="off" spellcheck="false"':''}${type==='number'?' min="1" step="1"':''}>${o.err?`<p class="err" data-err="${f}"></p>`:''}</div>`;
+}
+function tagsBox(){
+  const d=S.draft;
+  return `${S.tags.map(tg=>chip('tags',tg.id,tagLabel(tg),d.tags.includes(tg.id))).join('')}
+    ${S.addingTag?'':`<button type="button" class="chip ghost" data-act="tagnew">${ic('plus')}${esc(t('tag_new'))}</button>`}
+    ${S.addingTag?`<div class="addtag" style="width:100%"><input type="text" id="newtag" placeholder="${esc(t('tag_ph'))}" maxlength="40" autocomplete="off"><button type="button" class="btn primary" data-act="tagadd">${esc(t('add'))}</button></div>`:''}`;
+}
+function photosBox(){
+  const d=S.draft;
+  return d.photos.map((p,i)=>`<div class="ph"><img src="${p}" alt="" data-act="viewimg" data-i="${i}"><button type="button" class="rm" data-act="rmphoto" data-i="${i}" aria-label="remove">${ic('x')}</button></div>`).join('')
+    +(d.photos.length<MAX_PHOTOS?`<button type="button" class="ph-add" data-act="addphoto">${ic('cam')}<span>${esc(t('add_photo'))}</span></button>`:'');
+}
+function viewNew(){
+  if(!S.draft)S.draft=newDraft();
+  const d=S.draft,editing=!!S.editId;
+  return `${S.dbOk?'':`<div class="banner">${esc(t('no_storage'))}</div>`}
+  <h1 class="ttl">${esc(t(editing?'edit_title':'new_title'))}</h1>
+  <p class="sub">${esc(t('new_sub'))}</p>
+  <form id="lead-form" novalidate autocomplete="off">
+    <section class="card">
+      <h2><span class="n">1</span>${esc(t('sec_contact'))}</h2>
+      ${field('name',t('f_name'),'text',{req:1,err:1,cap:'words'})}
+      <div class="row2">${field('company',t('f_company'),'text',{cap:'words'})}${field('title',t('f_title'),'text')}</div>
+      ${field('email',t('f_email'),'email',{im:'email'})}
+      ${field('phone',t('f_phone'),'tel',{im:'tel',ph:'+39 …'})}
+      ${field('place',t('f_place'),'text',{ph:t('ph_place')})}
+      <p class="rule">${esc(t('rule_contact'))}</p>
+      <p class="err" data-err="reach"></p>
+    </section>
+    <section class="card">
+      <h2><span class="n">2</span>${esc(t('sec_type'))} <i class="req">*</i></h2>
+      <div class="chips">${TYPES.map(k=>chip('type',k,t('type_'+k),d.type===k)).join('')}</div>
+      <p class="err" data-err="type"></p>
+    </section>
+    <section class="card">
+      <h2><span class="n">3</span>${esc(t('sec_need'))}</h2>
+      <span class="lbl">${esc(t('f_needs'))}</span>
+      <div class="chips">${NEEDS.map(k=>chip('needs',k,t('need_'+k),d.needs.includes(k))).join('')}</div>
+      <span class="lbl">${esc(t('f_dest'))}</span>
+      <div class="chips">${DESTS.map(k=>chip('dest',k,t('dest_'+k),d.dest.includes(k))).join('')}</div>
+      <div class="row2">${field('month',t('f_month'),'month')}${field('pax',t('f_pax'),'number',{im:'numeric'})}</div>
+      <span class="lbl">${esc(t('f_next'))}</span>
+      <div class="chips">${NEXTS.map(k=>chip('next',k,t('next_'+k),d.next===k)).join('')}</div>
+    </section>
+    <section class="card">
+      <h2><span class="n">4</span>${esc(t('sec_prio'))} <i class="req">*</i></h2>
+      <div class="prio">${PRIOS.map(p=>`<button type="button" class="pr pr-${p}${d.prio===p?' on':''}" data-act="pick" data-k="prio" data-v="${p}" aria-pressed="${d.prio===p}"><b>${p}</b><span><strong>${esc(t('prio_'+p))}</strong><small>${esc(t('prio_'+p+'_rule'))}</small></span></button>`).join('')}</div>
+      <button type="button" class="suggest" id="suggest" data-act="usesuggest"></button>
+      <p class="err" data-err="prio"></p>
+    </section>
+    <section class="card">
+      <h2><span class="n">5</span>${esc(t('sec_tags'))}</h2>
+      <div class="chips" id="tagsbox">${tagsBox()}</div>
+      <p class="hint">${esc(t('tags_hint'))}</p>
+    </section>
+    <section class="card">
+      <h2><span class="n">6</span>${esc(t('sec_media'))}</h2>
+      <div class="photos" id="photos">${photosBox()}</div>
+      <p class="hint">${esc(t('photo_hint'))}</p>
+      <label class="lbl" for="f-note">${esc(t('f_note'))}</label>
+      <textarea id="f-note" data-f="note" rows="3" placeholder="${esc(t('ph_note'))}">${esc(d.note)}</textarea>
+    </section>
+    <div class="savebar">${editing?`<button type="button" class="btn" data-act="canceledit">${esc(t('btn_cancel'))}</button>`:''}<button type="submit" class="btn primary">${ic('check')}${esc(t(editing?'btn_update':'btn_save'))}</button></div>
+  </form>`;
+}
+function refreshSuggest(){const el=$('#suggest');if(!el)return;const p=suggestPrio(S.draft);el.textContent=p&&p!==S.draft.prio?t('prio_suggest',{p}):'';el.dataset.v=p}
+function setErr(k,msg){const el=document.querySelector(`[data-err="${k}"]`);if(el)el.textContent=msg||''}
+function validate(){
+  const d=S.draft;let first=null;const mark=(k,msg,sel)=>{setErr(k,msg);if(msg&&!first)first=sel};
+  ['name','reach','type','prio'].forEach(k=>setErr(k,''));document.querySelectorAll('input.bad').forEach(x=>x.classList.remove('bad'));
+  if(!d.name.trim()){mark('name',t('err_name'),'#f-name');$('#f-name').classList.add('bad')}
+  if(!d.email.trim()&&!d.phone.trim()&&!d.photos.length)mark('reach',t('err_reach'),'#f-email');
+  if(!d.type)mark('type',t('err_type'),'[data-err="type"]');
+  if(!d.prio)mark('prio',t('err_prio'),'[data-err="prio"]');
+  if(first){const el=$(first);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});if(el.focus&&el.tagName==='INPUT')setTimeout(()=>el.focus({preventScroll:true}),300)}}
+  return !first;
+}
+function findDup(d,selfId){
+  const em=d.email.trim().toLowerCase(),ph=digits(d.phone);
+  return S.leads.find(l=>{if(l.id===selfId)return false;if(em&&l.email&&l.email.trim().toLowerCase()===em)return true;const lp=digits(l.phone);if(ph&&lp){if(ph===lp)return true;if(ph.length>=9&&lp.length>=9&&ph.slice(-9)===lp.slice(-9))return true}return false});
+}
+async function saveDraft(){
+  if(!validate())return;
+  const d=S.draft;const dup=findDup(d,S.editId);
+  if(dup){const ok=await confirmBox(t('dup_title'),t('dup_body',{name:dup.name,company:dup.company||'—',by:dup.by||'—'}),t('btn_save_anyway'));if(!ok)return}
+  const pax=parseInt(d.pax,10);
+  const base={name:d.name.trim(),company:d.company.trim(),title:d.title.trim(),email:d.email.trim(),phone:d.phone.trim(),place:d.place.trim(),type:d.type,needs:d.needs.slice(),dest:d.dest.slice(),month:d.month,pax:isFinite(pax)&&pax>0?pax:null,next:d.next,prio:d.prio,tags:d.tags.filter(id=>tagById(id)),photos:d.photos.slice(),note:d.note.trim(),updatedAt:nowISO()};
+  let lead;
+  if(S.editId){lead=S.leads.find(l=>l.id===S.editId);if(!lead)return;Object.assign(lead,base)}
+  else{lead=Object.assign({id:uid(),v:1,createdAt:base.updatedAt,by:S.name||'—',event:S.event||''},base);S.leads.push(lead)}
+  try{await DB.put(lead)}catch(e){S.dbOk=false}
+  askPersist();
+  const wasEdit=!!S.editId;
+  toast(t(wasEdit?'updated':'saved',{name:lead.name}));
+  S.editId=null;S.draft=newDraft();S.addingTag=false;
+  if(wasEdit)S.tab='list';
+  render();window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- photos ---------- */
+function compress(file){
+  return new Promise((res,rej)=>{
+    const url=URL.createObjectURL(file);const img=new Image();
+    img.onload=()=>{try{const M=1280;let w=img.naturalWidth,h=img.naturalHeight;const s=Math.min(1,M/Math.max(w,h));w=Math.max(1,Math.round(w*s));h=Math.max(1,Math.round(h*s));
+      const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);URL.revokeObjectURL(url);res(c.toDataURL('image/jpeg',0.72))}catch(e){URL.revokeObjectURL(url);rej(e)}};
+    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('img'))};
+    img.src=url;
+  });
+}
+async function addPhotos(files){
+  const d=S.draft;let skipped=false;
+  for(const f of files){if(d.photos.length>=MAX_PHOTOS){skipped=true;break}try{d.photos.push(await compress(f))}catch(e){toast(t('err_photo'))}}
+  if(skipped)toast(t('max_photo'));
+  const box=$('#photos');if(box)box.innerHTML=photosBox();
+  if(d.photos.length)setErr('reach','');
+}
+
+/* ---------- view: list ---------- */
+function listFiltered(){
+  const q=S.lq.trim().toLowerCase();
+  return S.leads.filter(l=>{
+    if(S.lf==='inc'&&!incomplete(l))return false;
+    if(PRIOS.includes(S.lf)&&l.prio!==S.lf)return false;
+    if(q){const hay=[l.name,l.company,l.title,l.email,l.phone,l.place,l.note,tagsL(l.tags),l.by,l.event].join(' ').toLowerCase();if(!hay.includes(q))return false}
+    return true;
+  }).sort((a,b)=>(b.createdAt||'').localeCompare(a.createdAt||''));
+}
+function leadCard(l){
+  const tags=(l.tags||[]).map(id=>tagById(id)).filter(Boolean).slice(0,3);
+  return `<button class="lead" data-act="open" data-id="${esc(l.id)}">
+    <span class="pb pb-${esc(l.prio)}">${esc(l.prio)}</span>
+    <span class="lb">
+      <span class="l1"><b>${esc(l.name)}</b><time>${esc(fmtTime(l.createdAt))}</time></span>
+      <span class="l2">${esc([l.company,typeL(l.type)].filter(Boolean).join(' · '))}</span>
+      <span class="l3">${tags.map(tg=>`<span class="tg">${esc(tagLabel(tg))}</span>`).join('')}${(l.tags||[]).length>3?`<span class="tg">+${l.tags.length-3}</span>`:''}${l.next&&l.next!=='none'?`<span class="tg nx">${esc(t('next_'+l.next))}</span>`:''}${incomplete(l)?`<span class="tg warn">${esc(t('badge_inc'))}</span>`:''}</span>
+    </span>
+    ${l.photos&&l.photos.length?`<img class="thumb" src="${l.photos[0]}" alt="">`:''}
+  </button>`;
+}
+function cardsHTML(){
+  if(!S.leads.length)return `<div class="empty">${ic('list')}<p>${esc(t('empty'))}</p></div>`;
+  const arr=listFiltered();
+  return arr.length?arr.map(leadCard).join(''):`<div class="empty"><p>${esc(t('no_match'))}</p></div>`;
+}
+function viewList(){
+  const c={A:0,B:0,C:0,inc:0};S.leads.forEach(l=>{c[l.prio]=(c[l.prio]||0)+1;if(incomplete(l))c.inc++});
+  const f=[['all',t('f_all'),S.leads.length],['A','A · '+t('prio_A'),c.A],['B','B · '+t('prio_B'),c.B],['C','C · '+t('prio_C'),c.C],['inc',t('f_inc'),c.inc]];
+  return `<h1 class="ttl">${esc(t('tab_list'))}</h1>
+  <p class="sub">${esc(t('count',{n:S.leads.length}))}</p>
+  <div class="search">${ic('search')}<input type="search" id="q" value="${esc(S.lq)}" placeholder="${esc(t('search_ph'))}" autocomplete="off"></div>
+  <div class="chips sm" style="margin:10px 0 12px">${f.map(([k,lab,n])=>`<button class="chip${S.lf===k?' on':''}" data-act="lf" data-v="${k}">${esc(lab)} <small>${n}</small></button>`).join('')}</div>
+  <div id="cards">${cardsHTML()}</div>`;
+}
+
+/* ---------- detail sheet ---------- */
+function openDetail(id){
+  const l=S.leads.find(x=>x.id===id);if(!l)return;
+  const wa=digits(l.phone);
+  const rows=[[t('sec_type'),typeL(l.type)],[t('f_email'),l.email],[t('f_phone'),l.phone],[t('f_place'),l.place],[t('f_needs'),listL(l.needs,'need_')],[t('f_dest'),listL(l.dest,'dest_')],[t('f_month'),fmtMonth(l.month)],[t('f_pax'),l.pax],[t('f_next'),l.next?t('next_'+l.next):''],[t('sec_tags'),tagsL(l.tags)]].filter(r=>r[1]!==''&&r[1]!=null);
+  openSheet(`<div class="grab"></div>
+    <div class="sh-h"><span class="pb pb-${esc(l.prio)}">${esc(l.prio)}</span><h3>${esc(l.name)}</h3><button class="icon-btn" data-act="closesheet" aria-label="close">${ic('x')}</button></div>
+    ${l.company||l.title?`<p class="sub">${esc([l.title,l.company].filter(Boolean).join(' · '))}</p>`:''}
+    ${l.phone||l.email?`<div class="acts">${l.phone?`<a href="tel:${esc(l.phone.replace(/[^\d+]/g,''))}">${ic('phone')}${esc(t('btn_call'))}</a>`:''}${l.email?`<a href="mailto:${esc(l.email)}">${ic('mail')}${esc(t('btn_mail'))}</a>`:''}${wa.length>=8?`<a href="https://wa.me/${wa}" target="_blank" rel="noopener">${ic('chat')}${esc(t('btn_wa'))}</a>`:''}</div>`:''}
+    ${incomplete(l)?`<p class="banner">${esc(t('badge_inc'))}</p>`:''}
+    <div class="card"><dl class="dl">${rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></div>
+    ${l.photos&&l.photos.length?`<div class="pgrid" style="margin-bottom:10px">${l.photos.map((p,i)=>`<img src="${p}" alt="" data-act="viewimg" data-lead="${esc(l.id)}" data-i="${i}">`).join('')}</div>`:''}
+    ${l.note?`<span class="lbl">${esc(t('f_note'))}</span><div class="notebox">${esc(l.note)}</div>`:''}
+    <p class="meta">${esc(t('recorded',{t:fmtFull(l.createdAt),by:l.by||'—'}))}${l.event?' · '+esc(l.event):''}${l.updatedAt&&l.updatedAt!==l.createdAt?' · '+esc(t('updated_at',{t:fmtFull(l.updatedAt)})):''}</p>
+    <div class="btn-row"><button class="btn danger" data-act="del" data-id="${esc(l.id)}">${ic('trash')}${esc(t('btn_delete'))}</button><button class="btn primary" data-act="edit" data-id="${esc(l.id)}">${ic('edit')}${esc(t('btn_edit'))}</button></div>`,'detail',id);
+}
+
+/* ---------- view: handoff ---------- */
+function hoMatch(l){const h=S.ho;
+  if(h.tags.size&&!(l.tags||[]).some(x=>h.tags.has(x)))return false;
+  if(h.prio.size&&!h.prio.has(l.prio))return false;
+  if(h.type.size&&!h.type.has(l.type))return false;
+  if(h.by.size&&!h.by.has(l.by))return false;
+  if(h.event.size&&!h.event.has(l.event))return false;
+  return true}
+const hoAny=()=>Object.values(S.ho).some(s=>s.size);
+function hoDesc(){const h=S.ho,parts=[];
+  if(h.tags.size)parts.push([...h.tags].map(id=>tagLabel(tagById(id))).join(', '));
+  if(h.prio.size)parts.push([...h.prio].join('/'));
+  if(h.type.size)parts.push([...h.type].map(typeL).join(', '));
+  if(h.by.size)parts.push([...h.by].join(', '));
+  if(h.event.size)parts.push([...h.event].join(', '));
+  return parts.join(' · ')||t('pack_all')}
+function facet(k,title,items){
+  if(!items.length)return'';
+  return `<div class="facet"><span class="lbl">${esc(title)}</span><div class="chips sm">${items.map(([v,lab,n])=>`<button class="chip${S.ho[k].has(v)?' on':''}" data-act="ho" data-k="${k}" data-v="${esc(v)}">${esc(lab)} <small>${n}</small></button>`).join('')}</div></div>`;
+}
+function viewHandoff(){
+  const L=S.leads,cnt=f=>L.filter(f).length;
+  const tagItems=S.tags.map(tg=>[tg.id,tagLabel(tg),cnt(l=>(l.tags||[]).includes(tg.id))]);
+  const prioItems=PRIOS.map(p=>[p,p+' · '+t('prio_'+p),cnt(l=>l.prio===p)]);
+  const typeItems=TYPES.map(k=>[k,typeL(k),cnt(l=>l.type===k)]).filter(x=>x[2]>0);
+  const bys=[...new Set(L.map(l=>l.by).filter(Boolean))],evs=[...new Set(L.map(l=>l.event).filter(Boolean))];
+  const sel=L.filter(hoMatch);
+  const size=sel.reduce((a,l)=>a+(l.photos||[]).reduce((b,p)=>b+p.length,0)+1500,0)+30000;
+  return `<h1 class="ttl">${esc(t('ho_title'))}</h1>
+  <p class="sub">${esc(t('ho_sub'))}</p>
+  <section class="card">
+    <h2>${ic('send')}${esc(t('ho_send'))}</h2>
+    <p class="hint" style="margin-top:0">${esc(t('ho_send_hint'))}</p>
+    ${facet('tags',t('fc_tags'),tagItems)}
+    ${facet('prio',t('fc_prio'),prioItems)}
+    ${facet('type',t('fc_type'),typeItems)}
+    ${bys.length>1?facet('by',t('fc_by'),bys.map(b=>[b,b,cnt(l=>l.by===b)])):''}
+    ${evs.length>1?facet('event',t('fc_event'),evs.map(e=>[e,e,cnt(l=>l.event===e)])):''}
+    <p class="hint">${esc(t('ho_logic'))}</p>
+    <div class="match"><div><b>${esc(t('ho_match',{n:sel.length}))}</b><small>${esc(hoAny()?hoDesc():t('ho_all'))}${sel.length?' · '+esc(t('ho_size',{s:fmtSize(size)})):''}</small></div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">${sel.length?`<button class="linkbtn" data-act="hoprev">${esc(t(S.hoPrev?'ho_hide':'ho_show'))}</button>`:''}${hoAny()?`<button class="linkbtn" data-act="hoclear">${esc(t('ho_clear'))}</button>`:''}</div></div>
+    ${S.hoPrev&&sel.length?`<ul class="preview">${sel.slice().sort((a,b)=>a.prio.localeCompare(b.prio)).map(l=>`<li><span class="pb pb-${esc(l.prio)}">${esc(l.prio)}</span>${esc(l.name)}${l.company?' · '+esc(l.company):''}</li>`).join('')}</ul>`:''}
+    <div class="stack">
+      <button class="btn primary block" data-act="sendpack"${sel.length?'':' disabled'}>${ic('send')}${esc(t('btn_pack'))}</button>
+      <button class="btn block" data-act="sendxlsx"${sel.length?'':' disabled'}>${ic('down')}${esc(t('btn_xlsx'))}</button>
+    </div>
+    <p class="hint">${esc(t('pack_hint'))}</p>
+  </section>
+  <section class="card">
+    <h2>${ic('up')}${esc(t('ho_recv'))}</h2>
+    <p class="hint" style="margin-top:0">${esc(t('ho_recv_hint'))}</p>
+    <button class="btn block" style="margin-top:10px" data-act="import">${ic('up')}${esc(t('btn_import'))}</button>
+    <div class="note-ok" id="import-result">${esc(S.lastImport)}</div>
+  </section>`;
+}
+
+/* ---------- export: pack html ---------- */
+function exportLead(l){return{id:l.id,v:1,createdAt:l.createdAt,updatedAt:l.updatedAt,by:l.by,event:l.event,name:l.name,company:l.company,title:l.title,email:l.email,phone:l.phone,place:l.place,type:l.type,needs:l.needs,dest:l.dest,month:l.month,pax:l.pax,next:l.next,prio:l.prio,tags:l.tags,pc:(l.photos||[]).length,note:l.note}}
+function packHTML(kind,leads,desc){
+  const usedTags=kind==='leads'?S.tags.filter(tg=>leads.some(l=>(l.tags||[]).includes(tg.id))):S.tags;
+  const data={app:'vietcone-leads',v:1,kind,exportedAt:nowISO(),by:S.name,event:S.event,lang:S.lang,desc,tags:usedTags.map(tg=>tg.key?{id:tg.id,key:tg.key}:{id:tg.id,label:tg.label}),leads:leads.map(exportLead)};
+  const json=JSON.stringify(data).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+  const title=kind==='setup'?t('setup_title'):kind==='backup'?t('backup_title'):t('pack_title');
+  const sorted=leads.slice().sort((a,b)=>(a.prio||'').localeCompare(b.prio||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
+  const row=(k,v)=>v===''||v==null?'':`<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`;
+  const cards=sorted.map(l=>`<article data-id="${esc(l.id)}"><header><span class="p p${esc(l.prio)}">${esc(l.prio)}</span><div><h2>${esc(l.name)}</h2><p>${esc([l.title,l.company].filter(Boolean).join(' · '))}</p></div></header>
+    <table>${row(t('sec_type'),typeL(l.type))}${row(t('f_email'),l.email)}${row(t('f_phone'),l.phone)}${row(t('f_place'),l.place)}${row(t('f_needs'),listL(l.needs,'need_'))}${row(t('f_dest'),listL(l.dest,'dest_'))}${row(t('f_month'),fmtMonth(l.month))}${row(t('f_pax'),l.pax)}${row(t('f_next'),l.next?t('next_'+l.next):'')}${row(t('sec_tags'),tagsL(l.tags))}${row(t('f_note'),l.note)}</table>
+    ${(l.photos||[]).length?`<div class="ph">${l.photos.map(p=>`<img class="pimg" src="${p}" alt="">`).join('')}</div>`:''}
+    <footer>${esc(t('recorded',{t:fmtFull(l.createdAt),by:l.by||'—'}))}${l.event?' · '+esc(l.event):''}</footer></article>`).join('');
+  const setupBody=kind==='setup'?`<article><h2>${esc(t('event'))}: ${esc(S.event||'—')}</h2><p><b>${esc(t('pack_tags'))}:</b> ${esc(S.tags.map(tagLabel).join(' · '))}</p></article>`:'';
+  return `<!doctype html><html lang="${S.lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · ${esc(desc)}</title>
+<style>body{margin:0;background:#FFFCF6;color:#2F2E2E;font:15px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}.w{max-width:760px;margin:0 auto;padding:16px}
+.hd{display:flex;align-items:center;gap:12px;border-bottom:2px solid #B0412F;padding-bottom:12px;margin-bottom:14px}.hd img{height:44px}.hd h1{font:600 24px/1.15 Georgia,serif;color:#B0412F;margin:0}.hd p{margin:2px 0 0;color:#6E6762;font-size:13px}
+.tip{font-size:13px;color:#6E6762;background:#fff;border:1px dashed #D8CDBE;border-radius:10px;padding:8px 12px;margin-bottom:14px}
+article{background:#fff;border:1px solid #ECE4D8;border-radius:14px;padding:14px;margin-bottom:12px;break-inside:avoid}article header{display:flex;gap:10px;align-items:flex-start}
+.p{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;flex:none}.pA{background:#B0412F;color:#fff}.pB{background:#E3BE00;color:#3A2F00}.pC{background:#5F5954;color:#fff}
+h2{margin:0;font:600 19px/1.2 Georgia,serif}article header p{margin:2px 0 0;color:#6E6762;font-size:13px}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}th{text-align:left;color:#6E6762;font-weight:500;width:38%;padding:4px 8px 4px 0;vertical-align:top}td{padding:4px 0;white-space:pre-wrap;word-break:break-word}
+.ph{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.ph img{width:150px;max-width:calc(50% - 3px);border-radius:8px;border:1px solid #ECE4D8}footer{margin-top:8px;font-size:12px;color:#6E6762}</style></head>
+<body><div class="w"><div class="hd"><img src="${LOGO}" alt="Vietcone Travel"><div><h1>${esc(title)}</h1><p>${esc(desc)} · ${esc(t('pack_meta',{n:leads.length,by:S.name||'—',t:fmtFull(nowISO())}))}</p></div></div>
+<p class="tip">${esc(t('pack_open'))}</p>${setupBody}${cards}</div>
+<script type="application/json" id="vcl-data">${json}</`+`script></body></html>`;
+}
+
+/* ---------- export: xlsx (no library) ---------- */
+const CRC_T=(()=>{const tb=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;tb[n]=c>>>0}return tb})();
+function crc32(u){let c=0xFFFFFFFF;for(let i=0;i<u.length;i++)c=CRC_T[(c^u[i])&255]^(c>>>8);return(c^0xFFFFFFFF)>>>0}
+function zipStore(files){
+  const enc=new TextEncoder(),parts=[],central=[];let off=0;
+  const n=new Date(),dt=((n.getFullYear()-1980)<<9)|((n.getMonth()+1)<<5)|n.getDate(),tm=(n.getHours()<<11)|(n.getMinutes()<<5)|(n.getSeconds()>>1);
+  for(const f of files){
+    const name=enc.encode(f.name),data=typeof f.data==='string'?enc.encode(f.data):f.data,crc=crc32(data);
+    const lh=new DataView(new ArrayBuffer(30));
+    [[0,0x04034b50,4],[4,20,2],[6,0x0800,2],[8,0,2],[10,tm,2],[12,dt,2],[14,crc,4],[18,data.length,4],[22,data.length,4],[26,name.length,2],[28,0,2]].forEach(([o,v,s])=>s===4?lh.setUint32(o,v,true):lh.setUint16(o,v,true));
+    parts.push(new Uint8Array(lh.buffer),name,data);
+    const ch=new DataView(new ArrayBuffer(46));
+    [[0,0x02014b50,4],[4,20,2],[6,20,2],[8,0x0800,2],[10,0,2],[12,tm,2],[14,dt,2],[16,crc,4],[20,data.length,4],[24,data.length,4],[28,name.length,2],[30,0,2],[32,0,2],[34,0,2],[36,0,2],[38,0,4],[42,off,4]].forEach(([o,v,s])=>s===4?ch.setUint32(o,v,true):ch.setUint16(o,v,true));
+    central.push(new Uint8Array(ch.buffer),name);
+    off+=30+name.length+data.length;
+  }
+  const cs=central.reduce((a,b)=>a+b.length,0),end=new DataView(new ArrayBuffer(22));
+  [[0,0x06054b50,4],[4,0,2],[6,0,2],[8,files.length,2],[10,files.length,2],[12,cs,4],[16,off,4],[20,0,2]].forEach(([o,v,s])=>s===4?end.setUint32(o,v,true):end.setUint16(o,v,true));
+  return new Blob([...parts,...central,new Uint8Array(end.buffer)],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+const xesc=s=>String(s==null?'':s).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const colName=i=>{let s='';i++;while(i>0){const m=(i-1)%26;s=String.fromCharCode(65+m)+s;i=Math.floor((i-1)/26)}return s};
+function buildXLSX(leads){
+  const cols=[[t('sec_prio'),7,l=>l.prio],[t('f_name'),22,l=>l.name],[t('f_company'),22,l=>l.company],[t('f_title'),16,l=>l.title],[t('f_email'),26,l=>l.email],[t('f_phone'),18,l=>l.phone],[t('f_place'),16,l=>l.place],[t('sec_type'),18,l=>typeL(l.type)],[t('f_needs'),24,l=>listL(l.needs,'need_')],[t('f_dest'),22,l=>listL(l.dest,'dest_')],[t('f_month'),12,l=>l.month||''],[t('f_pax'),9,l=>l.pax==null?'':l.pax],[t('f_next'),18,l=>l.next?t('next_'+l.next):''],[t('sec_tags'),26,l=>tagsL(l.tags)],[t('f_note'),44,l=>l.note],[t('col_photos'),8,l=>(l.photos||[]).length],[t('event'),18,l=>l.event],[t('by'),14,l=>l.by],[t('col_created'),18,l=>fmtFull(l.createdAt)]];
+  const sorted=leads.slice().sort((a,b)=>(a.prio||'').localeCompare(b.prio||'')||(a.createdAt||'').localeCompare(b.createdAt||''));
+  const noteCol=14;
+  const cell=(r,c,v,s)=>{const ref=colName(c)+r;if(typeof v==='number')return `<c r="${ref}"${s?` s="${s}"`:''}><v>${v}</v></c>`;const str=String(v==null?'':v);if(!str)return'';return `<c r="${ref}" t="inlineStr"${s?` s="${s}"`:''}><is><t xml:space="preserve">${xesc(str)}</t></is></c>`};
+  let rows=`<row r="1">${cols.map((c,i)=>cell(1,i,c[0],1)).join('')}</row>`;
+  sorted.forEach((l,ri)=>{const r=ri+2;rows+=`<row r="${r}">${cols.map((c,i)=>cell(r,i,c[2](l),i===noteCol?2:0)).join('')}</row>`});
+  const last=colName(cols.length-1)+(sorted.length+1);
+  const sheetName=t('sheet');
+  const files=[
+    {name:'[Content_Types].xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`},
+    {name:'_rels/.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`},
+    {name:'xl/workbook.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="${xesc(sheetName)}" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">'${xesc(sheetName)}'!$A$1:$${colName(cols.length-1)}$${sorted.length+1}</definedName></definedNames></workbook>`},
+    {name:'xl/_rels/workbook.xml.rels',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`},
+    {name:'xl/styles.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/><family val="2"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/><family val="2"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FFB0412F"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`},
+    {name:'xl/worksheets/sheet1.xml',data:`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><dimension ref="A1:${last}"/><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="15"/><cols>${cols.map((c,i)=>`<col min="${i+1}" max="${i+1}" width="${c[1]}" customWidth="1"/>`).join('')}</cols><sheetData>${rows}</sheetData><autoFilter ref="A1:${last}"/></worksheet>`}
+  ];
+  return zipStore(files);
+}
+
+/* ---------- deliver (share or download) ---------- */
+async function deliver(blob,filename){
+  try{
+    const file=new File([blob],filename,{type:blob.type});
+    if(matchMedia('(pointer:coarse)').matches&&navigator.canShare&&navigator.canShare({files:[file]})){
+      try{await navigator.share({files:[file],title:filename});return}catch(e){if(e&&e.name==='AbortError')return}
+    }
+  }catch(e){}
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);
+  toast(t('sent',{f:filename}));
+}
+function selected(){return S.leads.filter(hoMatch)}
+function fileBase(){return 'vietcone-'+(hoAny()?slug(hoDesc())||'nhom':'tat-ca')+'_'+stamp()}
+
+/* ---------- import ---------- */
+const PHOTO_RE=/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/;
+const str=(v,max)=>typeof v==='string'?v.slice(0,max||500):'';
+function parsePack(text){
+  text=String(text||'').trim();let obj=null;
+  if(text.startsWith('{'))obj=JSON.parse(text);
+  else{const m=text.match(/<script type="application\/json" id="vcl-data">([\s\S]*?)<\/script>/);if(m)obj=JSON.parse(m[1])}
+  if(!obj||obj.app!=='vietcone-leads'||!Array.isArray(obj.leads))throw new Error('bad');
+  if(obj.leads.some(l=>l&&l.pc>0&&!(Array.isArray(l.photos)&&l.photos.length))){
+    const doc=new DOMParser().parseFromString(text,'text/html'),ph={};
+    doc.querySelectorAll('article[data-id]').forEach(a=>{ph[a.getAttribute('data-id')]=[...a.querySelectorAll('img.pimg')].map(i=>i.getAttribute('src')||'')});
+    obj.leads.forEach(l=>{if(l&&ph[l.id])l.photos=ph[l.id]});
+  }
+  return obj;
+}
+function mergeTags(inTags){
+  const map={};let added=0;
+  (Array.isArray(inTags)?inTags:[]).forEach(x=>{
+    if(!x||typeof x.id!=='string')return;
+    let local=tagById(x.id);
+    if(!local){const lab=x.key?(T.vi['tag_'+x.key]?t('tag_'+x.key):x.key):str(x.label,40);local=findTagByLabel(lab);
+      if(!local){local=x.key&&T.vi['tag_'+x.key]?{id:x.id,key:x.key}:{id:x.id,label:str(x.label,40)||x.id};if(!local.key&&!local.label)return;S.tags.push(local);added++}}
+    map[x.id]=local.id;
+  });
+  saveSettings();return{map,added};
+}
+function cleanLead(r,map){
+  if(!r||typeof r.id!=='string'||!str(r.name,120).trim())return null;
+  const pick=(v,list)=>list.includes(v)?v:'';const arr=(v,list)=>Array.isArray(v)?v.filter(x=>list.includes(x)):[];
+  const pax=parseInt(r.pax,10);
+  return{id:r.id.slice(0,64),v:1,createdAt:str(r.createdAt,40)||nowISO(),updatedAt:str(r.updatedAt,40)||str(r.createdAt,40)||nowISO(),by:str(r.by,60),event:str(r.event,80),
+    name:str(r.name,120).trim(),company:str(r.company,120),title:str(r.title,80),email:str(r.email,120),phone:str(r.phone,40),place:str(r.place,80),
+    type:pick(r.type,TYPES),needs:arr(r.needs,NEEDS),dest:arr(r.dest,DESTS),month:/^\d{4}-\d{2}$/.test(r.month||'')?r.month:'',pax:isFinite(pax)&&pax>0?pax:null,
+    next:pick(r.next,NEXTS),prio:pick(r.prio,PRIOS)||'C',tags:(Array.isArray(r.tags)?r.tags:[]).map(id=>map[id]).filter(Boolean),
+    photos:(Array.isArray(r.photos)?r.photos:[]).filter(p=>typeof p==='string'&&PHOTO_RE.test(p)).slice(0,MAX_PHOTOS),note:str(r.note,4000)};
+}
+async function importPack(p){
+  const {map,added}=mergeTags(p.tags);let a=0,u=0,s=0;
+  for(const raw of p.leads){
+    const l=cleanLead(raw,map);if(!l){s++;continue}
+    const ex=S.leads.find(x=>x.id===l.id);
+    if(!ex){S.leads.push(l);a++;try{await DB.put(l)}catch(e){}}
+    else if((l.updatedAt||'')>(ex.updatedAt||'')){Object.assign(ex,l);u++;try{await DB.put(ex)}catch(e){}}
+    else s++;
+  }
+  if(p.event&&typeof p.event==='string'&&p.event!==S.event){
+    const ok=await confirmBox(t('event'),t('import_event_q',{e:str(p.event,80)}),t('btn_use'),false,t('btn_keep'));
+    if(ok){S.event=str(p.event,80);saveSettings()}
+  }
+  askPersist();
+  let msg=t('import_done',{a,u,s});if(added)msg+=' · '+t('import_tags',{n:added});
+  return msg;
+}
+
+/* ---------- settings sheet ---------- */
+function settingsHTML(){
+  const n=id=>S.leads.filter(l=>(l.tags||[]).includes(id)).length;
+  return `<div class="grab"></div>
+  <div class="sh-h"><h3>${esc(t('settings'))}</h3><button class="icon-btn" data-act="closesheet" aria-label="close">${ic('x')}</button></div>
+  <section class="card">
+    <label class="lbl" for="s-name">${esc(t('s_you'))} <i class="req">*</i></label>
+    <input type="text" id="s-name" data-s="name" value="${esc(S.name)}" autocomplete="off" autocapitalize="words">
+    <p class="hint">${esc(t('s_you_hint'))}</p>
+    <label class="lbl" for="s-event">${esc(t('s_event'))}</label>
+    <input type="text" id="s-event" data-s="event" value="${esc(S.event)}" placeholder="${esc(t('ph_event'))}" autocomplete="off">
+  </section>
+  <section class="card">
+    <h2>${esc(t('s_tags'))}</h2>
+    ${S.tags.map(tg=>`<div class="tagrow"><input type="text" data-tagid="${esc(tg.id)}" value="${esc(tagLabel(tg))}" maxlength="40" autocomplete="off"><small>${n(tg.id)}</small><button class="icon-btn" data-act="tagdel" data-id="${esc(tg.id)}" aria-label="${esc(t('btn_delete'))}">${ic('trash')}</button></div>`).join('')}
+    <div class="addtag"><input type="text" id="s-newtag" placeholder="${esc(t('tag_ph'))}" maxlength="40" autocomplete="off"><button class="btn" data-act="settagadd">${ic('plus')}${esc(t('add'))}</button></div>
+    <p class="hint">${esc(t('s_tags_hint'))}</p>
+    <button class="btn primary block" style="margin-top:10px" data-act="setup">${ic('send')}${esc(t('btn_setup'))}</button>
+  </section>
+  <section class="card">
+    <button class="btn block" data-act="backup"${S.leads.length?'':' disabled'}>${ic('down')}${esc(t('btn_backup'))} (${S.leads.length})</button>
+    <div class="danger-zone"><button class="btn danger block" data-act="erase"${S.leads.length?'':' disabled'}>${ic('trash')}${esc(t('btn_erase'))}</button></div>
+    <p class="hint">${esc(t('s_data'))}</p>
+  </section>
+  <button class="btn primary block" data-act="closesheet">${esc(t('btn_done'))}</button>
+  <p class="ver">Vietcone Leads · v${VERSION}</p>`;
+}
+function onboardHTML(){
+  return `<div class="grab"></div>
+  <div class="sh-h"><img src="${LOGO}" alt="Vietcone Travel" style="height:40px"><h3>${esc(t('ob_title'))}</h3></div>
+  <div class="langbig">${[['vi','Tiếng Việt'],['en','English'],['it','Italiano']].map(([l,n])=>`<button data-act="lang" data-v="${l}" class="${S.lang===l?'on':''}">${n}</button>`).join('')}</div>
+  <p class="hint" style="margin-bottom:6px">${esc(t('ob_body'))}</p>
+  <label class="lbl" for="s-name">${esc(t('s_you'))} <i class="req">*</i></label>
+  <input type="text" id="s-name" data-s="name" value="${esc(S.name)}" autocomplete="off" autocapitalize="words">
+  <p class="err" id="ob-err"></p>
+  <label class="lbl" for="s-event">${esc(t('s_event'))}</label>
+  <input type="text" id="s-event" data-s="event" value="${esc(S.event)}" placeholder="${esc(t('ph_event'))}" autocomplete="off">
+  <p class="hint">${esc(t('ob_pin'))}</p>
+  <button class="btn primary block" style="margin-top:14px" data-act="start">${esc(t('btn_start'))}</button>`;
+}
+
+/* ---------- view: guide ---------- */
+function viewGuide(){
+  const G=T[S.lang];
+  const pin=(name,icon,list)=>`<div class="pin"><h4>${ic(icon)}${name}</h4><ol>${list.map(x=>`<li>${x}</li>`).join('')}</ol></div>`;
+  const ios=pin('iPhone · Safari','apple',G.g_ios),and=pin('Android · Chrome','droid',G.g_and);
+  return `<h1 class="ttl">${esc(t('tab_guide'))}</h1>
+  <p class="sub">Vietcone Leads · v${VERSION}</p>
+  <section class="card"><h2>${esc(t('g_flow'))}</h2><ol class="steps">${G.g_steps.map(([h,p])=>`<li><b>${h}</b><p>${p}</p></li>`).join('')}</ol></section>
+  <section class="card"><h2>${esc(t('g_rules'))}</h2>
+    <div class="prio" style="margin-bottom:12px">${PRIOS.map(p=>`<div class="pr pr-${p} on" style="pointer-events:none"><b>${p}</b><span><strong>${esc(t('prio_'+p))}</strong><small>${esc(t('prio_'+p+'_rule'))}</small></span></div>`).join('')}</div>
+    <ul class="rules">${G.g_rule_list.map(x=>`<li>${x}</li>`).join('')}</ul></section>
+  <section class="card" id="pin-sec"><h2>${esc(t('g_pin'))}</h2>
+    ${isStandalone()?`<div class="ok-line">${ic('check')}${esc(t('g_standalone'))}</div>`:''}
+    ${S.installEvt?`<button class="btn primary block" data-act="install" style="margin-bottom:6px">${ic('down')}${esc(t('btn_install'))}</button>`:''}
+    ${isIOS()?ios+and:and+ios}
+  </section>
+  <section class="card"><h2>${esc(t('g_data'))}</h2><ul class="rules">${G.g_notes.map(x=>`<li>${x}</li>`).join('')}</ul></section>`;
+}
+
+/* ---------- sheets & dialogs ---------- */
+function openSheet(html,type,arg){S.sheet={type,arg};$('#sheet').innerHTML=html;$('#sheet-wrap').hidden=false;document.body.classList.add('noscroll');$('#sheet').scrollTop=0}
+function closeSheet(){if(S.sheet&&S.sheet.type==='onboard')return;S.sheet=null;$('#sheet-wrap').hidden=true;$('#sheet').innerHTML='';document.body.classList.remove('noscroll')}
+function rerenderSheet(){if(!S.sheet)return;const {type,arg}=S.sheet;const top=$('#sheet').scrollTop;if(type==='settings')$('#sheet').innerHTML=settingsHTML();else if(type==='onboard')$('#sheet').innerHTML=onboardHTML();else if(type==='detail'){openDetail(arg)}$('#sheet').scrollTop=top}
+function confirmBox(title,body,okLabel,danger,cancelLabel){
+  return new Promise(res=>{
+    const w=$('#confirm-wrap');
+    $('#confirm').innerHTML=`<h3>${esc(title)}</h3><p>${esc(body)}</p><div class="btn-row"><button class="btn" data-c="0">${esc(cancelLabel||t('btn_cancel'))}</button><button class="btn ${danger?'danger':'primary'}" data-c="1">${esc(okLabel||t('btn_ok'))}</button></div>`;
+    w.hidden=false;
+    const done=v=>{w.hidden=true;w.onclick=null;res(v)};
+    w.onclick=e=>{const b=e.target.closest('[data-c]');if(b)done(b.dataset.c==='1');else if(e.target===w)done(false)};
+  });
+}
+
+/* ---------- render ---------- */
+function render(){
+  document.documentElement.lang=S.lang;
+  $('#top').innerHTML=headerHTML();
+  $('#tabs').innerHTML=navHTML();
+  const v=$('#view');
+  v.innerHTML=({new:viewNew,list:viewList,handoff:viewHandoff,guide:viewGuide}[S.tab]||viewNew)();
+  if(S.tab==='new'){refreshSuggest();const f=$('#lead-form');f.addEventListener('submit',e=>{e.preventDefault();saveDraft()})}
+}
+function renderTagsBox(){const b=$('#tagsbox');if(b)b.innerHTML=tagsBox();const i=$('#newtag');if(i)i.focus()}
+
+/* ---------- actions ---------- */
+const ACT={
+  tab(el){S.tab=el.dataset.v;render();window.scrollTo(0,0)},
+  lang(el){S.lang=el.dataset.v;saveSettings();render();rerenderSheet()},
+  settings(){openSheet(settingsHTML(),'settings')},
+  closesheet(){closeSheet();render()},
+  pick(el){
+    const k=el.dataset.k,v=el.dataset.v,d=S.draft;
+    if(['type','next','prio'].includes(k)){d[k]=d[k]===v&&k==='next'?'':v;el.parentElement.querySelectorAll(`[data-k="${k}"]`).forEach(b=>{const on=b.dataset.v===d[k];b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});setErr(k,'')}
+    else{const a=d[k],i=a.indexOf(v);if(i>=0)a.splice(i,1);else a.push(v);el.classList.toggle('on',i<0);el.setAttribute('aria-pressed',i<0)}
+    refreshSuggest();
+  },
+  usesuggest(el){const p=el.dataset.v;if(!p)return;S.draft.prio=p;document.querySelectorAll('.pr').forEach(b=>{const on=b.dataset.v===p;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});setErr('prio','');refreshSuggest()},
+  tagnew(){S.addingTag=true;renderTagsBox()},
+  tagadd(){const i=$('#newtag');const tg=addTag(i&&i.value);if(tg&&!S.draft.tags.includes(tg.id))S.draft.tags.push(tg.id);S.addingTag=false;renderTagsBox()},
+  addphoto(){if(S.draft.photos.length>=MAX_PHOTOS){toast(t('max_photo'));return}$('#photo-input').click()},
+  rmphoto(el){S.draft.photos.splice(+el.dataset.i,1);$('#photos').innerHTML=photosBox()},
+  viewimg(el){const src=el.dataset.lead?(S.leads.find(l=>l.id===el.dataset.lead)||{photos:[]}).photos[+el.dataset.i]:S.draft.photos[+el.dataset.i];if(!src)return;$('#viewer-img').src=src;$('#viewer').hidden=false},
+  closeviewer(){$('#viewer').hidden=true;$('#viewer-img').removeAttribute('src')},
+  canceledit(){S.editId=null;S.draft=newDraft();S.tab='list';render()},
+  open(el){openDetail(el.dataset.id)},
+  edit(el){const l=S.leads.find(x=>x.id===el.dataset.id);if(!l)return;S.editId=l.id;S.draft=draftFromLead(l);S.tab='new';S.addingTag=false;closeSheet();render();window.scrollTo(0,0)},
+  async del(el){const l=S.leads.find(x=>x.id===el.dataset.id);if(!l)return;if(!await confirmBox(t('btn_delete'),t('confirm_delete',{name:l.name}),t('btn_delete'),true))return;S.leads=S.leads.filter(x=>x.id!==l.id);try{await DB.del(l.id)}catch(e){}closeSheet();render();toast(t('deleted'))},
+  lf(el){S.lf=el.dataset.v;render()},
+  ho(el){const s=S.ho[el.dataset.k],v=el.dataset.v;s.has(v)?s.delete(v):s.add(v);render()},
+  hoclear(){Object.values(S.ho).forEach(s=>s.clear());render()},
+  hoprev(){S.hoPrev=!S.hoPrev;render()},
+  async sendpack(){const sel=selected();if(!sel.length){toast(t('nothing'));return}const html=packHTML('leads',sel,hoDesc());await deliver(new Blob([html],{type:'text/html'}),fileBase()+'.html')},
+  async sendxlsx(){const sel=selected();if(!sel.length){toast(t('nothing'));return}await deliver(buildXLSX(sel),fileBase()+'.xlsx')},
+  import(){$('#pack-input').click()},
+  async setup(){const html=packHTML('setup',[],S.event||t('setup_title'));await deliver(new Blob([html],{type:'text/html'}),'vietcone-thiet-lap_'+(slug(S.event)||'su-kien')+'.html')},
+  async backup(){if(!S.leads.length)return;const html=packHTML('backup',S.leads,t('pack_all'));await deliver(new Blob([html],{type:'text/html'}),'vietcone-sao-luu_'+stamp()+'.html')},
+  async erase(){if(!await confirmBox(t('btn_erase'),t('confirm_erase',{n:S.leads.length}),t('btn_delete'),true))return;S.leads=[];try{await DB.clear()}catch(e){}closeSheet();render();toast(t('erased'))},
+  async tagdel(el){const tg=tagById(el.dataset.id);if(!tg)return;const used=S.leads.filter(l=>(l.tags||[]).includes(tg.id));
+    if(!await confirmBox(t('btn_delete'),t('confirm_tagdel',{t:tagLabel(tg),n:used.length}),t('btn_delete'),true))return;
+    S.tags=S.tags.filter(x=>x.id!==tg.id);saveSettings();const ts=nowISO();
+    for(const l of used){l.tags=l.tags.filter(x=>x!==tg.id);l.updatedAt=ts;try{await DB.put(l)}catch(e){}}
+    if(S.draft)S.draft.tags=S.draft.tags.filter(x=>x!==tg.id);S.ho.tags.delete(tg.id);rerenderSheet()},
+  settagadd(){const i=$('#s-newtag');if(addTag(i&&i.value))rerenderSheet()},
+  start(){if(!S.name.trim()){$('#ob-err').textContent=t('err_you');$('#s-name').focus();return}S.ob=true;saveSettings();S.sheet=null;$('#sheet-wrap').hidden=true;document.body.classList.remove('noscroll');render()},
+  async install(){if(!S.installEvt)return;S.installEvt.prompt();try{await S.installEvt.userChoice}catch(e){}S.installEvt=null;render()}
+};
+document.addEventListener('click',e=>{const el=e.target.closest('[data-act]');if(!el)return;const fn=ACT[el.dataset.act];if(fn){e.preventDefault();fn(el,e)}});
+$('#sheet-wrap').addEventListener('click',e=>{if(e.target.id==='sheet-wrap'){closeSheet();render()}});
+document.addEventListener('input',e=>{
+  const el=e.target;
+  if(el.dataset.f&&S.draft){S.draft[el.dataset.f]=el.value;if(el.dataset.f==='name'){setErr('name','');el.classList.remove('bad')}if(['email','phone'].includes(el.dataset.f))setErr('reach','');if(['month','pax'].includes(el.dataset.f))refreshSuggest()}
+  else if(el.id==='q'){S.lq=el.value;$('#cards').innerHTML=cardsHTML()}
+  else if(el.dataset.s){S[el.dataset.s]=el.value.slice(0,80);saveSettings();$('#top').innerHTML=headerHTML();const er=$('#ob-err');if(er)er.textContent=''}
+});
+document.addEventListener('change',e=>{
+  const el=e.target;
+  if(el.dataset.tagid){const tg=tagById(el.dataset.tagid);const v=el.value.trim().slice(0,40);if(tg&&v&&v!==tagLabel(tg)){delete tg.key;tg.label=v;saveSettings()}else if(tg)el.value=tagLabel(tg)}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='s-newtag'){e.preventDefault();ACT.settagadd()}
+  else if(e.key==='Enter'&&e.target.id==='newtag'){e.preventDefault();ACT.tagadd()}
+  else if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.closest('#lead-form')){e.preventDefault();const f=[...document.querySelectorAll('#lead-form input[data-f],#lead-form textarea')];const i=f.indexOf(e.target);if(i>=0&&f[i+1])f[i+1].focus();else e.target.blur()}if(e.key==='Escape'){if(!$('#viewer').hidden)ACT.closeviewer();else if(S.sheet&&S.sheet.type!=='onboard'){closeSheet();render()}}});
+$('#photo-input').addEventListener('change',async e=>{const files=[...e.target.files];e.target.value='';if(files.length)await addPhotos(files)});
+$('#pack-input').addEventListener('change',async e=>{
+  const f=e.target.files[0];e.target.value='';if(!f)return;
+  try{const p=parsePack(await f.text());S.lastImport=await importPack(p);toast(S.lastImport);render()}
+  catch(err){toast(t('import_bad'))}
+});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();S.installEvt=e;if(S.tab==='guide')render()});
+
+/* ---------- boot ---------- */
+(async function boot(){
+  loadSettings();
+  S.dbOk=await DB.open();
+  if(S.dbOk){try{S.leads=(await DB.all())||[]}catch(e){S.leads=[]}}
+  S.draft=newDraft();
+  render();
+  if(!S.ob||!S.name)openSheet(onboardHTML(),'onboard');
+  if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+})();
+</script>
+</body>
+</html>
